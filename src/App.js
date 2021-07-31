@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import BG from './images/LandingPageBG.png';
 import './App.css';
+import { Row, Col } from 'antd';
+import styled from 'styled-components';
+import { ReactComponent as Logo } from './images/ZuHause_Logo_Complete_Light.svg';
 
-function App() {
+const StyledRow = styled(Row)`
+display: flex;
+height: 100vh;
+width: 100vw;
+background-image: url(${BG});
+background-size: cover;
+`;
+
+const CenteredRow = styled(Row)`
+align-items: center;
+justify-content: center;
+`
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledRow>
+      <Col>
+        <CenteredRow>
+          <Col span={12} offset={6}>
+            <Logo />
+          </Col>
+        </CenteredRow>
+      </Col>
+    </StyledRow>
   );
 }
 
