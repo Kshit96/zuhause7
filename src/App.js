@@ -62,7 +62,7 @@ box-shadow: inset 0 0 0 0.1px #A99060;
 }
 
 svg {
-  margin-left:1rem;
+  margin-left: 1.2rem;
   margin-right: 0;
   transition: margin-right 0.5s;
 }
@@ -84,7 +84,7 @@ margin-right: 0rem;
 }
 
 &:hover svg{
-  margin-left:1rem;
+  margin-left: 1.2rem;
   margin-right: -2rem;
   transition: margin-right 0.5s;
 }
