@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "antd/dist/antd.css";
+import './fonts/AvenirNext-Bold.ttf';
+import './fonts/AvenirNext-Regular.ttf';
 
 ReactDOM.render(
   <React.StrictMode>
