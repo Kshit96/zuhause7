@@ -28,7 +28,6 @@ margin: 0!important;
 display: inline;
 `
 
-
 const LandingPage = () => {
     return (
       <StyledRow justify="center" align="middle">
@@ -39,14 +38,14 @@ const LandingPage = () => {
             </CenteredCol>
           </Row>
           <Row>
-            <CenteredCol style={{ textAlign: 'center', color: '#FCFEFB', fontSize: '20px', display: 'inline' }} span={18} offset={3}>
+            <CenteredCol style={{ textAlign: 'center', color: '#FCFEFB', fontSize: '19px', display: 'inline' }} span={18} offset={3}>
               <br />
-              Zu•hau•se  / [tsuˈhauzə] /, meaning <BoldP>at home</BoldP>, is a dream put to implementation by <BoldP>Zahra Chadha.</BoldP>
+              <p>Zu•hau•se  / [tsuˈhauzə] /, meaning <BoldP>at home</BoldP>, is a dream put to implementation by <BoldP>Zahra Chadha.</BoldP>
               <br /><br />
               Our aim is to ensure you get what you want to make your spaces as <BoldP>functional, comfortable and warm</BoldP> as possible.<br/>
               Let your dreams of getting that specific lighting, furniture, signature art piece, flooring or rugs be converted into reality by Zuhause7.<br/>
               We get the best, and more importantly what you need, from the Europe and the USA. And if that does not satiate your desire for your dream space,
-              we can help you source it locally to your bespoke requirements as well.
+              we can help you source it locally to your bespoke requirements as well.</p>
               <br /><br /><br /><br /><br />
             </CenteredCol>
           </Row>
