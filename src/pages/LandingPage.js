@@ -12,10 +12,13 @@ background-image: url(${BG});
 background-size: cover;
 `;
 
-const CenteredCol = styled(Col)`
+export const CenteredCol = styled(Col)`
 display: flex;
 align-items: center;
 justify-content: center;
+`
+
+const IntroductionCol = styled(CenteredCol)`
 text-shadow: 0px 0px 15px #0F121A;
 text-align: center;
 color: #FCFEFB;
@@ -41,7 +44,7 @@ const LandingPage = () => {
             </CenteredCol>
           </Row>
           <Row>
-            <CenteredCol span={18} offset={3}>
+            <IntroductionCol span={18} offset={3}>
               <br />
               <p>Zu•hau•se  / [tsuˈhauzə] /, meaning <BoldP>at home</BoldP>, is a dream put to implementation by <BoldP>Zahra Chadha.</BoldP>
               <br /><br />
@@ -50,7 +53,7 @@ const LandingPage = () => {
               We get the best, and more importantly what you need, from the Europe and the USA. And if that does not satiate your desire for your dream space,
               we can help you source it locally to your bespoke requirements as well.</p>
               <br /><br /><br /><br /><br />
-            </CenteredCol>
+            </IntroductionCol>
           </Row>
         </Col>
       </StyledRow>

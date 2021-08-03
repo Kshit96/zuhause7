@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Form, Input, Button } from 'antd';
 import BG from '../images/ContactFormBG.png';
 import styled from 'styled-components';
-import { BoldP } from './LandingPage';
+import { BoldP, CenteredCol } from './LandingPage';
 import emailjs from 'emailjs-com';
 
 const StyledRow = styled(Row)`
@@ -29,23 +29,42 @@ color: #0F121A;
 margin:  0 0 0 0;
 `
 
+const FormCol = styled(CenteredCol)`
+align-items: baseline;
+margin-top: -1rem;
+label{
+    font-size: 18px!important;
+}
+`
+
+const StyledInput = styled(Input)`
+border-width: 0 0 1px 0;
+border-color: #0F121A;
+`
+
+const StyledInputTextArea = styled(Input.TextArea)`
+border-width: 0 0 1px 0;
+border-color: #0F121A;
+`
+
+const StyledButton = styled(Button)`
+width: 10rem;
+margin-top: 1rem;
+`
+
 const ContactForm = () => {
 
     emailjs.init('user_p9KhvYfyjCaAGlO9YHuRf');
 
     const layout = {
-        labelCol: { span: 8 },
-        wrapperCol: { span: 10 },
+        wrapperCol: { span: 24 },
     };
     /* eslint-disable no-template-curly-in-string */
     const validateMessages = {
-        required: '${label} is required!',
+        required: 'The field is required!',
         types: {
             email: '${label} is not a valid email!',
             number: '${label} is not a valid number!',
-        },
-        number: {
-            range: '${label} must be between ${min} and ${max}',
         },
     };
     /* eslint-enable no-template-curly-in-string */
@@ -64,30 +83,32 @@ const ContactForm = () => {
                 <StyledP>Don't be shy!</StyledP>
                 <StyledP>Feel <BoldP>at home</BoldP> and write to us!</StyledP>
             </HeaderCol>
-            <Col span={24}>
-                <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
-                    <Form.Item name={['user_name']} label="Name" rules={[{ required: true }]}>
-                        <Input />
+            <FormCol style={{ alignItems: 'top' }} span={24}>
+                <Form style={{ width: '60%' }} layout={'vertical'} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+                    <Form.Item label={'Your name'} name={['user_name']} rules={[{ required: true }]}>
+                        <StyledInput size={'large'} />
                     </Form.Item>
-                    <Form.Item name={['user_email']} label="Email" rules={[{ type: 'email', required: true }]}>
-                        <Input />
+                    <Form.Item label={'Your email'} name={['user_email']} rules={[{ type: 'email', required: true }]}>
+                        <StyledInput size={'large'} />
                     </Form.Item>
                     <Form.Item
-                        label="Phone Number"
                         name={'contact_number'}
+                        label={'Your 10 digit phone number'}
                     >
-                        <Input defaultValue={""}/>
+                        <StyledInput size={'large'} defaultValue={""} />
                     </Form.Item>
-                    <Form.Item name={['message']} label="Message" rules={[{ required: true }]}>
-                        <Input.TextArea />
+                    <Form.Item label={'What would you like to say to us?'} name={['message']} rules={[{ required: true }]}>
+                        <StyledInputTextArea rows={4} size={'large'} />
                     </Form.Item>
-                    <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-                        <Button type="primary" htmlType="submit">
-                            Submit
-                        </Button>
+                    <Form.Item>
+                        <Row style={{width: '100%', justifyContent: 'center'}}><Col>
+                            <StyledButton type="primary" htmlType="submit" shape="round" size="large">
+                            Send it!
+                            </StyledButton>
+                        </Col></Row>
                     </Form.Item>
                 </Form>
-            </Col>
+            </FormCol>
         </StyledRow>
     )
 }
