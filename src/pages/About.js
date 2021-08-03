@@ -17,6 +17,7 @@ text-align: center;
 color: #0F121A;
 font-size: 19px;
 display: inline;
+overflow: hidden;
 `
 
 export const BoldP = styled.p`
@@ -35,7 +36,7 @@ margin-top: 7.1rem;
 object-fit: cover;
 object-position: center right;
 `
-const StyledDivider = styled(Divider)`
+export const StyledDivider = styled(Divider)`
 text-shadow: 0px 0px 30px #A99060;
 color: #0F121A!Important;
 font-family: AvenirNextBold;
