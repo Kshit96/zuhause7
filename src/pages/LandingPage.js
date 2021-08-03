@@ -1,5 +1,4 @@
 import { Row, Col } from 'antd';
-import { Button, DatePicker, version } from "antd";
 import styled from 'styled-components';
 import { ReactComponent as Logo } from '../images/ZuHause_Logo_Complete_Light.svg';
 import BG from '../images/LandingPageBG.png';
@@ -18,9 +17,13 @@ display: flex;
 align-items: center;
 justify-content: center;
 text-shadow: 0px 0px 15px #0F121A;
+text-align: center;
+color: #FCFEFB;
+font-size: 19px;
+display: inline;
 `
 
-const BoldP = styled.p`
+export const BoldP = styled.p`
 color: #A99060;
 font-family: AvenirNextBold;
 width: fit-content;
@@ -38,7 +41,7 @@ const LandingPage = () => {
             </CenteredCol>
           </Row>
           <Row>
-            <CenteredCol style={{ textAlign: 'center', color: '#FCFEFB', fontSize: '19px', display: 'inline' }} span={18} offset={3}>
+            <CenteredCol span={18} offset={3}>
               <br />
               <p>Zu•hau•se  / [tsuˈhauzə] /, meaning <BoldP>at home</BoldP>, is a dream put to implementation by <BoldP>Zahra Chadha.</BoldP>
               <br /><br />

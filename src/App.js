@@ -1,7 +1,9 @@
+import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Row, Col, Button } from 'antd';
+import { Button, Modal } from 'antd';
 import './App.css';
 import LandingPage from './pages/LandingPage';
+import ContactForm from './pages/ContactForm';
 import { ReactComponent as ContactUs } from './icons/ContactUs.svg';
 
 const BorderColors = keyframes`
@@ -88,26 +90,42 @@ margin-right: 0rem;
   margin-right: -2rem;
   transition: margin-right 0.5s;
 }
-
-
 `
-
-const StyledRow = styled(Row)`
-margin-top: 0.4rem;
-display: flex;
-justify-content: center;
-align-items: center;
-`
-
-// const StyledP = styled.p`
-// margin-left: -9.375rem;
-// font-size: 1.625rem;
-// `
 
 const App = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  const modalBodyStyle={
+    height: '80vh',
+  }
+
+  const StyledModal = styled(Modal)`
+  .ant-modal-body{
+    padding: 0;
+  }
+  .ant-modal-close-x{
+    color: #0F121A;
+  }
+  `
+
   return (
     <>
-      <StyledButton>
+    <StyledModal visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} footer={null} bodyStyle={modalBodyStyle} width={'41vw'} height={'80vh'}>
+        <ContactForm/>
+      </StyledModal>
+      <StyledButton onClick={showModal}>
         <p>Contact Us</p>
         <ContactUs />
       </StyledButton>
