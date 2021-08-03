@@ -6,6 +6,8 @@ import LandingPage from './pages/LandingPage';
 import ContactForm from './pages/ContactForm';
 import Categories from './pages/Categories';
 import { ReactComponent as ContactUs } from './icons/ContactUs.svg';
+import Projects from './pages/Projects';
+import About from './pages/About';
 
 const StyledButton = styled(Button)`
 overflow: hidden;
@@ -101,6 +103,8 @@ const App = () => {
       </StyledButton>
       <LandingPage/>
       <Categories/>
+      <About/>
+      <Projects/>
     </>
   );
 }

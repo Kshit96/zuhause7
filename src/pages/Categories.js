@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Image } from 'antd';
 import BG from '../images/CategoriesBG.png';
 import { StyledRow, CenteredCol, IntroductionCol, BoldP } from './LandingPage';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import Furniture from '../images/Furniture.jpeg';
 import Lighting from '../images/Lighting.jpeg';
 import Artefacts from '../images/Artefacts.jpeg';
@@ -11,7 +11,7 @@ const StyledRowWithBG = styled(StyledRow)`
 background-image: url(${BG});
 background-size: cover;
 `
-const FullWidthRow = styled(Row)`
+export const FullWidthRow = styled(Row)`
 width: 100%;
 overflow: hidden;
 `
