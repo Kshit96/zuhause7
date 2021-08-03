@@ -3,6 +3,7 @@ import { Row, Col, Form, Input, Button } from 'antd';
 import BG from '../images/ContactFormBG.png';
 import styled from 'styled-components';
 import { BoldP } from './LandingPage';
+import emailjs from 'emailjs-com';
 
 const StyledRow = styled(Row)`
 display: flex;
@@ -30,6 +31,8 @@ margin:  0 0 0 0;
 
 const ContactForm = () => {
 
+    emailjs.init('user_p9KhvYfyjCaAGlO9YHuRf');
+
     const layout = {
         labelCol: { span: 8 },
         wrapperCol: { span: 10 },
@@ -47,7 +50,12 @@ const ContactForm = () => {
     };
     /* eslint-enable no-template-curly-in-string */
     const onFinish = (values) => {
-        console.log(values);
+        emailjs.send("service_qe0c6yi", "template_ioxixne", values)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            }, (err) => {
+                console.log('FAILED...', err);
+            });
     };
 
     return (
@@ -68,9 +76,9 @@ const ContactForm = () => {
                         label="Phone Number"
                         name={'contact_number'}
                     >
-                        <Input />
+                        <Input defaultValue={""}/>
                     </Form.Item>
-                    <Form.Item name={['message']} label="Message">
+                    <Form.Item name={['message']} label="Message" rules={[{ required: true }]}>
                         <Input.TextArea />
                     </Form.Item>
                     <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
