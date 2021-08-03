@@ -1,9 +1,38 @@
 import React from 'react';
 import { Row, Col, Form, Input, Button } from 'antd';
 import BG from '../images/ContactFormBG.png';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { BoldP, CenteredCol } from './LandingPage';
 import emailjs from 'emailjs-com';
+import { ReactComponent as Send } from '../icons/Send.svg';
+
+const BorderColors = keyframes`
+  0% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  33% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: #A99060;
+
+  }
+  66% {
+    border-top-color: #A99060;
+    border-right-color: transparent;
+    border-bottom-color: #A99060;
+    border-left-color: #A99060;
+  }
+  100% {
+    border-top-color: #A99060;
+    border-right-color: #A99060;
+    border-bottom-color: #A99060;
+    border-left-color: #A99060;
+  }
+`
 
 const StyledRow = styled(Row)`
 display: flex;
@@ -48,8 +77,48 @@ border-color: #0F121A;
 `
 
 const StyledButton = styled(Button)`
+transition: box-shadow 1s, border-color 1s;
 width: 10rem;
 margin-top: 1rem;
+border-color: #0F121A;
+background-color: #FFFFFF;
+color: #0F121A;
+box-shadow: inset 0 0 0 0.1px #A99060;
+display: block;
+overflow: hidden;
+&:hover{
+    background-color: #FFFFFF;
+    box-shadow: inset 400px 0 0 0.1px #A99060;
+    transition: box-shadow 2s, border-color 0.5s;
+    transform-origin: left;
+    border-color: #A99060;
+    cursor: pointer;
+  }
+
+  svg {
+    margin-left: -12rem;
+    transition: margin-left 1s;
+  }
+
+  p{
+    margin-top: -2.2rem;
+    margin-left: 0;
+    transition: margin-left 2s;
+    font-size: 1.3rem;
+    align-self: center;
+    margin-right: 0rem;
+    }
+    
+    &:hover p{
+      margin-left: 9.375rem;
+      transition: margin-left 1s;
+    }
+    
+    &:hover svg{
+      margin-left: 0;
+      transition: margin-left 1s;
+      z-index:3;
+    }
 `
 
 const ContactForm = () => {
@@ -103,7 +172,8 @@ const ContactForm = () => {
                     <Form.Item>
                         <Row style={{width: '100%', justifyContent: 'center'}}><Col>
                             <StyledButton type="primary" htmlType="submit" shape="round" size="large">
-                            Send it!
+                            <Send/>
+                            <p>Send it!</p>
                             </StyledButton>
                         </Col></Row>
                     </Form.Item>

@@ -6,34 +6,6 @@ import LandingPage from './pages/LandingPage';
 import ContactForm from './pages/ContactForm';
 import { ReactComponent as ContactUs } from './icons/ContactUs.svg';
 
-const BorderColors = keyframes`
-  0% {
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  33% {
-    border-top-color: transparent;
-    border-right-color: #A99060;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-
-  }
-  66% {
-    border-top-color: #A99060;
-    border-right-color: #A99060;
-    border-bottom-color: #A99060;
-    border-left-color: transparent;
-  }
-  100% {
-    border-top-color: #A99060;
-    border-right-color: #A99060;
-    border-bottom-color: #A99060;
-    border-left-color: #A99060;
-  }
-`
-
 const StyledButton = styled(Button)`
 overflow: hidden;
 position: fixed;
@@ -52,9 +24,6 @@ justify-content: center;
 z-index: 2;
 box-shadow: inset 0 0 0 0.1px #A99060;
 &:hover{
-  // animation: ${BorderColors};
-  // animation-duration: 0.5s;
-  // animation-fill-mode: forwards;
   box-shadow: inset 400px 0 0 0.1px #A99060;
   width: 150px;
   transition: width 0.5s, box-shadow 1s, border-color 0.5s ;
