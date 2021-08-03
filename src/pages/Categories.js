@@ -85,7 +85,7 @@ p{
 &:hover img{
     transform-origin: center;
     transition: width 0.5s;
-    width: 38rem;
+    width: 45rem;
 }
 
 `
