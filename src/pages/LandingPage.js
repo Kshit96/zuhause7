@@ -4,13 +4,17 @@ import { ReactComponent as Logo } from '../images/ZuHause_Logo_Complete_Light.sv
 import BG from '../images/LandingPageBG.png';
 
 
-const StyledRow = styled(Row)`
+export const StyledRow = styled(Row)`
 display: flex;
 height: 100vh;
 width: 100vw;
+`;
+
+const StyledRowWithBG = styled(StyledRow)`
 background-image: url(${BG});
 background-size: cover;
-`;
+`
+
 
 export const CenteredCol = styled(Col)`
 display: flex;
@@ -18,7 +22,7 @@ align-items: center;
 justify-content: center;
 `
 
-const IntroductionCol = styled(CenteredCol)`
+export const IntroductionCol = styled(CenteredCol)`
 text-shadow: 0px 0px 15px #0F121A;
 text-align: center;
 color: #FCFEFB;
@@ -36,7 +40,7 @@ display: inline;
 
 const LandingPage = () => {
     return (
-      <StyledRow justify="center" align="middle">
+      <StyledRowWithBG justify="center" align="middle">
         <Col>
           <Row>
             <CenteredCol span={4} offset={10}>
@@ -56,7 +60,7 @@ const LandingPage = () => {
             </IntroductionCol>
           </Row>
         </Col>
-      </StyledRow>
+      </StyledRowWithBG>
     );
   }
 

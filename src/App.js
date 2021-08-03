@@ -4,6 +4,7 @@ import { Button, Modal } from 'antd';
 import './App.css';
 import LandingPage from './pages/LandingPage';
 import ContactForm from './pages/ContactForm';
+import Categories from './pages/Categories';
 import { ReactComponent as ContactUs } from './icons/ContactUs.svg';
 
 const StyledButton = styled(Button)`
@@ -76,7 +77,7 @@ const App = () => {
     setIsModalVisible(false);
   };
 
-  const modalBodyStyle={
+  const modalBodyStyle = {
     height: '80vh',
   }
 
@@ -91,15 +92,15 @@ const App = () => {
 
   return (
     <>
-    <StyledModal visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} footer={null} bodyStyle={modalBodyStyle} width={'41vw'} height={'80vh'}>
-        <ContactForm/>
+      <StyledModal visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} footer={null} bodyStyle={modalBodyStyle} width={'41vw'} height={'80vh'}>
+        <ContactForm />
       </StyledModal>
       <StyledButton onClick={showModal}>
         <p>Contact Us</p>
         <ContactUs />
       </StyledButton>
-      <LandingPage />
-      <LandingPage />
+      <LandingPage/>
+      <Categories/>
     </>
   );
 }
