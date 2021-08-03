@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { FullWidthRow } from './Categories';
 import { CenteredCol } from './LandingPage'
 import { AboutCol, StyledDivider } from './About';
+import ProjectItem from './ProjectItem';
 
 
 const StyledRowWithBG = styled(StyledRow)`
@@ -13,15 +14,28 @@ background-image: url(${BG});
 background-size: cover;
 `
 
+const ProjectItemCol = styled(Col)`
+display: flex;
+justify-content: center;
+align-items: center;
+overflow-y: scroll;
+`
+
+const ProjectData = [
+    {}
+]
+
+
+
 const Projects = () => {
     return(
         <StyledRowWithBG>
             <FullWidthRow>
                 <CenteredCol style={{ flexDirection: 'column' }} span={24}>
                     <StyledDivider>Projects</StyledDivider>
-                    <AboutCol span={14}>
-                        This is Projects.
-                    </AboutCol>
+                    <Col style={{ marginTop: '7.1rem'}} span={14}>
+                        <ProjectItem />
+                    </Col>
                 </CenteredCol>
             </FullWidthRow>
         </StyledRowWithBG>
