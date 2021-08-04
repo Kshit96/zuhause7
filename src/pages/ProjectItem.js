@@ -25,7 +25,6 @@ text-align: center;
 font-family: AvenirNextRegular;
 font-weight: 600;
 font-size: 20px;
-z-index: 1;
 margin-bottom: 3rem;
 margin-top: -1rem;
 transition: margin-top 0.25s, margin-bottom 0.25s;
@@ -42,11 +41,25 @@ transition: margin-top 0.5s;
 `
 
 const ContainerDiv = styled.div`
+height: 560px;
+width: 400px;
 margin: 10rem 0rem 0 0rem;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+
+&:before{
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    border: 5px solid;
+    border-bottom: 1px;
+    width: 400px;
+    height: 1px;
+    bottom: 215px;
+}
 
 // &:before{
 //     display: block;
@@ -56,18 +69,27 @@ flex-direction: column;
 //     height: 20px;
 //     background-color: #A99060;
 //     border-radius: 50%;
-//     top:110px;
+//     top: 500px;
+//     z-index: -1;
+//     left: 290px;
+//     transition: left 0.5s;
+// }
+
+// &:hover:before{
+//     left: 270px;
+//     transition: left 0.5s;
 // }
 
 // &:after{
 //     display: block;
 //     position: relative;
+//     z-index: -1;
 //     content: '';
 //     width: 20px;
 //     height: 20px;
 //     background-color: #A99060;
 //     border-radius: 50%;
-//     top: -110px;
+//     left: -10px;
 // }
 
 &:hover .footer-span{
@@ -243,7 +265,6 @@ const ProjectItem = props => {
     let calculatedPadding = (5-props.data.projects.length)*30;
     let calculatedHeight = (5-props.data.projects.length)*30;
     let calculatedMargin = (props.data.projects.length)*30-5 + 'px 0px 0px 0px';
-    console.log(calculatedMargin);
     return (
         <ContainerDiv className={'container-div'} length={calculatedMargin}>
             <ProjectDiv className={'project-div'} style={{height: '180px', paddingTop: calculatedPadding+'px'}}>

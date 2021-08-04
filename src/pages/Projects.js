@@ -118,7 +118,7 @@ const Projects = () => {
     return (
         <StyledRowWithBG>
             <FullWidthRow style={{marginBottom: '80px'}}>
-                <CenteredCol style={{ flexDirection: 'column', height: '1200px' }} span={24}>
+                <CenteredCol style={{ flexDirection: 'column', height: '1300px', overflowY: 'visible' }} span={24}>
                 <StyledDivider>Projects</StyledDivider>
                     <ProjectItemCol span={14}>
                         {ProjectData.map((data)=>{ return <ProjectItem data={data}/>})}
