@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Row, Col, Image } from 'antd';
 import BG from '../images/CategoriesBG.png';
 import { StyledRow, CenteredCol, IntroductionCol, BoldP } from './LandingPage';
@@ -23,9 +23,17 @@ color: #FCFEFB;
 margin: 0;
 `
 
-const StyledHR = styled.hr`
-width: 20rem;
-margin-top: 1rem;
+const StyledHR = styled.div`
+.styled-hr{
+    width: 0rem;
+    margin-top: 1rem;
+    transition: width 1s;
+}
+
+.styled-hr-animate{
+    width: 20rem;
+    transition: width 1s;
+}
 `
 
 const ImageCol = styled.div`
@@ -68,11 +76,11 @@ span{
 
 p{
     margin-left: 0rem;
-    transition: margin-left 0.5s;
+    transition: margin-left 0.5s ease-in-out;
 }
 
 &:hover p{
-    transition: margin-left 1s;
+    transition: margin-left 1s ease-in-out;
     margin-left: -20rem;
 }
 
@@ -95,12 +103,33 @@ background: rgba(15, 18, 26, 0.9);
 `
 
 const Categories = () => {
+
+    useEffect(()=>{
+        const hr= document.querySelector('.styled-hr');
+        console.log(hr);
+        
+        hr.classList.remove('styled-hr-animate');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                hr.classList.add('styled-hr-animate');
+                return;
+              }
+              hr.classList.remove('styled-hr-animate');
+            });
+          });
+          
+          observer.observe(document.querySelector('.styled-hr'));
+    },[])
+
+
     return (
         <StyledRowWithBG>
             <FullWidthRow style={{ height: '40%' }}>
                 <CenteredCol style={{ flexDirection: 'column' }} span={24}>
                     <HeadingP>Explore Now</HeadingP>
-                    <StyledHR />
+                    <StyledHR className={'hr-wrapper'}><hr className={'styled-hr styled-hr-animate'}/></StyledHR>
                     <IntroductionCol style={{ marginTop: '2rem' }}>
                         Residential Projects. Commercial Spaces. Show flats. Clinics.<br />
                         We can retrofit your space no matter what segment it belongs to.<br />
