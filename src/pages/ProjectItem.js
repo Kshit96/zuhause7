@@ -42,7 +42,7 @@ transition: margin-top 0.5s;
 `
 
 const ContainerDiv = styled.div`
-margin: 10rem 0.5rem 0 0.5rem;
+margin: 10rem 0rem 0 0rem;
 display: flex;
 justify-content: center;
 align-items: center;
