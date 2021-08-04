@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import BG from '../images/ProjectItem.jpg';
 import { CenteredCol } from './LandingPage';
 
+
 const BorderedCenteredCol = styled(CenteredCol)`
 `
 

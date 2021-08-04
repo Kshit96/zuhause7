@@ -93,7 +93,7 @@ overflow: hidden;
     }
 `
 
-const ContactForm = () => {
+const ContactForm = props => {
 
     emailjs.init('user_p9KhvYfyjCaAGlO9YHuRf');
 
@@ -110,6 +110,7 @@ const ContactForm = () => {
         emailjs.send("service_qe0c6yi", "template_ioxixne", values)
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
+                props.handleOk();
             }, (err) => {
                 console.log('FAILED...', err);
             });

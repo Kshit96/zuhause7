@@ -63,7 +63,7 @@ margin-right: 0rem;
   transition: margin-right 0.5s;
 }
 `
-const StyledModal = styled(Modal)`
+export const StyledModal = styled(Modal)`
 .ant-modal-body{
   padding: 0;
 }
@@ -93,8 +93,8 @@ const App = () => {
 
   return (
     <>
-      <StyledModal visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} footer={null} bodyStyle={modalBodyStyle} width={'41vw'} height={'80vh'}>
-        <ContactForm />
+      <StyledModal visible={isModalVisible} onCancel={handleCancel} footer={null} bodyStyle={modalBodyStyle} width={'41vw'} height={'80vh'}>
+        <ContactForm onOk={handleOk}/>
       </StyledModal>
       <StyledButton onClick={showModal}>
         <p>Contact Us</p>
