@@ -12,6 +12,13 @@
     font-weight: regular;
     }
 
+    @font-face {
+      font-family: "AvenirNextUltraLight";
+      src: local("AvenirNextUltraLight"),
+       url("./fonts/AvenirNext-UltraLight.ttf") format("truetype");
+      font-weight: regular;
+      }
+
 body {
   margin: 0;
   font-family: 'AvenirNextRegular' !important;
