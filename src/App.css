@@ -28,11 +28,14 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fade-in-wrapper{
+  opacity: 0;
+  margin-top: 5rem!important;
+  transition: opacity 1.5s, margin 2s ease;
+}
+
+.fade-in-wrapper-animate{
+  opacity: 1;
+  margin-top: 0rem!important;
+  transition: opacity 1.5s, margin 2s ease;
 }

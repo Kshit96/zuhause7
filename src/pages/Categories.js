@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Row, Col, Image } from 'antd';
+import { Row, Image } from 'antd';
 import BG from '../images/CategoriesBG.png';
 import { StyledRow, CenteredCol, IntroductionCol, BoldP } from './LandingPage';
 import styled from 'styled-components';
@@ -106,21 +106,27 @@ const Categories = () => {
 
     useEffect(()=>{
         const hr= document.querySelector('.styled-hr');
-        console.log(hr);
-        
+
         hr.classList.remove('styled-hr-animate');
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-              if (entry.isIntersecting) {
+              if (entry.isIntersecting && entry.target.className.includes('styled-hr')) {
                 hr.classList.add('styled-hr-animate');
                 return;
               }
-              hr.classList.remove('styled-hr-animate');
+
+              if (entry.isIntersecting && entry.target.className.includes('fade-in-wrapper')) {
+                entry.target.classList.add('fade-in-wrapper-animate');
+                return;
+              }
+
+              entry.target.classList.remove('styled-hr-animate');
+              entry.target.classList.remove('fade-in-wrapper-animate');
             });
-          });
-          
+          }, {rootMargin: "0px 0px -300px 0px"});
           observer.observe(document.querySelector('.styled-hr'));
+          observer.observe(document.querySelector('.fade-in-wrapper'));
     },[])
 
 
@@ -128,7 +134,7 @@ const Categories = () => {
         <StyledRowWithBG>
             <FullWidthRow style={{ height: '40%' }}>
                 <CenteredCol style={{ flexDirection: 'column' }} span={24}>
-                    <HeadingP>Explore Now</HeadingP>
+                    <HeadingP className={'fade-in-wrapper fade-in-wrapper-animate'}>Explore Now</HeadingP>
                     <StyledHR className={'hr-wrapper'}><hr className={'styled-hr styled-hr-animate'}/></StyledHR>
                     <IntroductionCol style={{ marginTop: '2rem' }}>
                         Residential Projects. Commercial Spaces. Show flats. Clinics.<br />

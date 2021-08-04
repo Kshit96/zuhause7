@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { Button, Modal } from 'antd';
 import './App.css';
 import LandingPage from './pages/LandingPage';
@@ -63,6 +63,14 @@ margin-right: 0rem;
   transition: margin-right 0.5s;
 }
 `
+const StyledModal = styled(Modal)`
+.ant-modal-body{
+  padding: 0;
+}
+.ant-modal-close-x{
+  color: #0F121A;
+}
+`
 
 const App = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -82,15 +90,6 @@ const App = () => {
   const modalBodyStyle = {
     height: '80vh',
   }
-
-  const StyledModal = styled(Modal)`
-  .ant-modal-body{
-    padding: 0;
-  }
-  .ant-modal-close-x{
-    color: #0F121A;
-  }
-  `
 
   return (
     <>

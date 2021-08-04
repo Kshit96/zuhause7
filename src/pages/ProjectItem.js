@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Image } from 'antd';
+import { Row } from 'antd';
 import styled from 'styled-components';
 import BG from '../images/ProjectItem.jpg';
 import { CenteredCol } from './LandingPage';

@@ -1,38 +1,10 @@
 import React from 'react';
 import { Row, Col, Form, Input, Button } from 'antd';
 import BG from '../images/ContactFormBG.png';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { BoldP, CenteredCol } from './LandingPage';
 import emailjs from 'emailjs-com';
 import { ReactComponent as Send } from '../icons/Send.svg';
-
-const BorderColors = keyframes`
-  0% {
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  33% {
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: #A99060;
-
-  }
-  66% {
-    border-top-color: #A99060;
-    border-right-color: transparent;
-    border-bottom-color: #A99060;
-    border-left-color: #A99060;
-  }
-  100% {
-    border-top-color: #A99060;
-    border-right-color: #A99060;
-    border-bottom-color: #A99060;
-    border-left-color: #A99060;
-  }
-`
 
 const StyledRow = styled(Row)`
 display: flex;
@@ -125,9 +97,6 @@ const ContactForm = () => {
 
     emailjs.init('user_p9KhvYfyjCaAGlO9YHuRf');
 
-    const layout = {
-        wrapperCol: { span: 24 },
-    };
     /* eslint-disable no-template-curly-in-string */
     const validateMessages = {
         required: 'The field is required!',

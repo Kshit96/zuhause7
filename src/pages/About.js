@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Image, Divider } from 'antd';
+import { Image, Divider } from 'antd';
 import BG from '../images/AboutBG.png';
 import { StyledRow } from './LandingPage';
 import styled from 'styled-components';
