@@ -30,23 +30,45 @@ margin-bottom: 3rem;
 margin-top: -1rem;
 transition: margin-top 0.25s, margin-bottom 0.25s;
 overflow: hidden;
-height: 40px;
 display: flex;
 flex-direction: column;
 `
 
 const FooterSpan = styled.span`
-margin-top: 1.5rem;
+margin-top: 2rem;
 text-align: center;
 font-family: AvenirNextBold;
 transition: margin-top 0.5s;
 `
+
 const ContainerDiv = styled.div`
-margin-top: 10rem;
+margin: 10rem 0.5rem 0 0.5rem;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+
+// &:before{
+//     display: block;
+//     position: relative;
+//     content: '';
+//     width: 20px;
+//     height: 20px;
+//     background-color: #A99060;
+//     border-radius: 50%;
+//     top:110px;
+// }
+
+// &:after{
+//     display: block;
+//     position: relative;
+//     content: '';
+//     width: 20px;
+//     height: 20px;
+//     background-color: #A99060;
+//     border-radius: 50%;
+//     top: -110px;
+// }
 
 &:hover .footer-span{
     margin-top: 0.5rem;
@@ -183,27 +205,21 @@ flex-direction: column;
 }
 
 .project-p{
-    margin: 1.5rem 0 0 0;
+    width: 400px;
+    margin: ${props=> props.length};
     transition: margin 0.5s;
     display: inline;
 }
 
 &:hover .project-p{
-    margin: 8.5rem 0 0 0;
-    transition: margin 0.5s;
-}
-
-.year-p{
-    display: inline;
     margin: 0 0 0 0;
     transition: margin 0.5s;
 }
 
-&:hover .year-p{
-    margin-top: -10rem;
+&:hover .project-p-head{
+    margin: -150px 0 150px 0;
     transition: margin 0.5s;
 }
-
 `
 
 const StyledP = styled.p`
@@ -212,21 +228,38 @@ font-size: 15px;
 display: inline;
 `
 
+const CircleDiv = styled.div`
+
+&:before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: 
+}
+`
+
 const ProjectItem = props => {
+
+    let calculatedPadding = (5-props.data.projects.length)*30;
+    let calculatedHeight = (5-props.data.projects.length)*30;
+    let calculatedMargin = (props.data.projects.length)*30-5 + 'px 0px 0px 0px';
+    console.log(calculatedMargin);
     return (
-        <ContainerDiv className={'container-div'}>
-            <ProjectDiv className={'project-div'}>
-                <span className={'year-p'}>Projects 2008-2010</span>
-                <span className={'project-p'}>Niteen Parulekar Architects <StyledP>Mumbai</StyledP></span>
+        <ContainerDiv className={'container-div'} length={calculatedMargin}>
+            <ProjectDiv className={'project-div'} style={{height: '180px', paddingTop: calculatedPadding+'px'}}>
+                <span className={'project-p project-p-head'}>{props.data.projectYear}</span>
+                {props.data.projects.map((project)=>{ 
+                    return <span className={'project-p'}>{project.name}<StyledP>&nbsp;{project.city}</StyledP></span>
+                    })}
             </ProjectDiv>
             <Row className={'year-row'}>
                 <BorderedCenteredCol className={'year-col'} span={24}>
                     <StyledDiv className={'year-div'}>
-                        <span className={'year-span'}>'08-'10</span>
-                    </ StyledDiv>
+                        <span className={'year-span'}>{props.data.projectYearShort}</span>
+                    </StyledDiv>
                 </BorderedCenteredCol>
             </Row>
-            <FooterSpan className={'footer-span'}>Furniture | Lighting | Artefacts</FooterSpan>
+            <FooterSpan className={'footer-span'}>{props.data.type}</FooterSpan>
         </ContainerDiv>
     );
 }
