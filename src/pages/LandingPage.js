@@ -105,34 +105,8 @@ display: inline;
 `
 
 const StyledLogo = styled(Logo)`
-@media only screen and (max-width: 600px) {
-  height: 100%;
-  width: 100%;
-}
-
-@media only screen and (min-width: 600px) {
-  height: 100%;
-  width: 100%;
-}
-
-@media only screen and (min-width: 768px) {
-  height: 100%;
-  width: 100%;
-}
-
-@media only screen and (min-width: 992px) {
-  height: 100%;
-  width: 100%;
-}
-
-@media only screen and (min-width: 1200px) {
-  height: 100%;
-  width: 100%;
-}
-
-@media only screen and (min-width: 1600px) {
-  height: 100%;
-  width: 100%;
+width: 100%;
+height:100%;
 }
 `
 
@@ -141,7 +115,13 @@ const LandingPage = () => {
       <StyledRowWithBG justify="center" align="middle">
         <Col>
           <Row>
-            <CenteredCol span={4} offset={10}>
+            <CenteredCol
+            xs={{span: 10, offset: 7}}
+            sm={{span: 10, offset: 7}}
+            md={{span: 10, offset: 7}}
+            lg={{span: 4, offset: 10}}
+            xl={{span: 4, offset: 10}}
+            xxl={{span: 4, offset: 10}}>
               <StyledLogo style={{ alignSelf: 'flex-end' }} />
             </CenteredCol>
           </Row>
