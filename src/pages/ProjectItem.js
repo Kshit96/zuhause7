@@ -251,20 +251,10 @@ font-size: 15px;
 display: inline;
 `
 
-const CircleDiv = styled.div`
-
-&:before{
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-color: 
-}
-`
 
 const ProjectItem = props => {
 
     let calculatedPadding = (5-props.data.projects.length)*30;
-    let calculatedHeight = (5-props.data.projects.length)*30;
     let calculatedMargin = (props.data.projects.length)*30-5 + 'px 0px 0px 0px';
     return (
         <ContainerDiv className={'container-div'} length={calculatedMargin}>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import { Row, Image } from 'antd';
+import { Row, Image, Modal } from 'antd';
 import BG from '../images/CategoriesBG.png';
 import { StyledRow, CenteredCol, IntroductionCol, BoldP } from './LandingPage';
 import styled from 'styled-components';
@@ -7,7 +7,6 @@ import Furniture from '../images/Furniture.jpeg';
 import Lighting from '../images/Lighting.jpeg';
 import Artefacts from '../images/Artefacts.jpeg';
 import { LIGHTING, FURNITURE, ARTEFACTS } from '../data/CatalogueImages';
-import { StyledModal } from '../App';
 import ProductGallery from './ProductGallery';
 
 const StyledRowWithBG = styled(StyledRow)`
@@ -100,12 +99,13 @@ p{
 }
 `
 
-const StyledModalWithBG = styled(StyledModal)`
+const StyledModalWithBG = styled(Modal)`
 .ant-modal-body{
+    padding: 0;
     background-color: #0F121A!important;
     background-image: url(${BG})!important;
     background-size: cover!important;
-}
+  }
 
 .ant-modal-close-x{
     color:#FCFEFB;

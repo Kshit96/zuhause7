@@ -4,15 +4,47 @@ import { ReactComponent as Logo } from '../images/ZuHause_Logo_Complete_Light.sv
 import BG from '../images/LandingPageBG.png';
 
 
+
+
 export const StyledRow = styled(Row)`
 display: flex;
-height: 100vh;
-width: 100vw;
-`;
+
+@media only screen and (max-width: 600px) {
+  height: 600px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  height: 600px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  height: 768;
+  width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  height: 768px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+  height: 768px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1600px) {
+  height: 1080px;
+  width: 100%;
+}
+
+`
 
 const StyledRowWithBG = styled(StyledRow)`
 background-image: url(${BG});
 background-size: cover;
+background-position: center;
 `
 
 
@@ -20,15 +52,49 @@ export const CenteredCol = styled(Col)`
 display: flex;
 align-items: center;
 justify-content: center;
+
 `
 
 export const IntroductionCol = styled(CenteredCol)`
 text-shadow: 0px 0px 15px #0F121A;
 text-align: center;
 color: #FCFEFB;
-font-size: 19px;
+font-size: 1.188rem;
 display: inline;
+
+@media only screen and (max-width: 600px) {
+  font-size:0.5rem;
+}
+
+@media only screen and (min-width: 600px) {
+  font-size:0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  font-size:0.75rem;
+}
+
+@media only screen and (min-width: 992px) {
+  font-size:1rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  font-size: 1rem;
+}
+
+@media only screen and (min-width: 1600px) {
+  font-size: 1.188rem;
+}
 `
+
+// Mobile: 360 x 640
+// Mobile: 375 x 667
+// Mobile: 360 x 720
+// iPhone X: 375 x 812
+// Pixel 2: 411 x 731
+// Tablet: 768 x 1024
+// Laptop: 1366 x 768
+// High-res laptop or desktop: 1920 x 1080
 
 export const BoldP = styled.p`
 color: #A99060;
@@ -38,13 +104,45 @@ margin: 0!important;
 display: inline;
 `
 
+const StyledLogo = styled(Logo)`
+@media only screen and (max-width: 600px) {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1600px) {
+  height: 100%;
+  width: 100%;
+}
+`
+
 const LandingPage = () => {
     return (
       <StyledRowWithBG justify="center" align="middle">
         <Col>
           <Row>
             <CenteredCol span={4} offset={10}>
-              <Logo style={{ alignSelf: 'flex-end' }} />
+              <StyledLogo style={{ alignSelf: 'flex-end' }} />
             </CenteredCol>
           </Row>
           <Row>

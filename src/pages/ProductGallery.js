@@ -1,7 +1,6 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
 import styled from 'styled-components';
-import BG from '../images/CategoriesBG.png';
 
 const StyledImageGallery = styled(ImageGallery)`
 .image-gallery-content{
