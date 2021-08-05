@@ -70,6 +70,42 @@ export const StyledModal = styled(Modal)`
 .ant-modal-close-x{
   color: #0F121A;
 }
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+@media only screen and (min-width: 1200px) {
+  
+  width: 100%!important;
+  margin-top: -1%;
+
+  .ant-modal-content{
+    height: 650px;
+    width: 45%!important;
+}
+.ant-modal-body{
+  height: 650px;
+  width: 100%!important;
+}
+ }
+ 
+ @media only screen and (min-width: 1600px) {
+
+  width: 100%!important;
+  margin-top: -1%;
+  .ant-modal-content{
+    height: 900px;
+    width: 45%!important;
+}
+
+.ant-modal-body{
+  height: 900px;
+  width: 100%!important;
+}
+ }
+
 `
 
 const App = () => {
@@ -87,23 +123,19 @@ const App = () => {
     setIsModalVisible(false);
   };
 
-  const modalBodyStyle = {
-    height: '80vh',
-  }
-
   return (
     <>
-      <StyledModal visible={isModalVisible} onCancel={handleCancel} footer={null} bodyStyle={modalBodyStyle} width={'41vw'} height={'80vh'}>
-        <ContactForm onOk={handleOk}/>
+      <StyledModal visible={isModalVisible} onCancel={handleCancel} footer={null}>
+        <ContactForm onOk={handleOk} />
       </StyledModal>
       <StyledButton onClick={showModal}>
         <p>Contact Us</p>
         <ContactUs />
       </StyledButton>
-      <LandingPage/>
-      <Categories/>
-      <About/>
-      <Projects/>
+      <LandingPage />
+      <Categories />
+      <About />
+      <Projects />
     </>
   );
 }

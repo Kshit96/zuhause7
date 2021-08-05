@@ -1,9 +1,8 @@
 import React from 'react';
 import { Col } from 'antd';
 import BG from '../images/ProjectsBG.png';
-import { StyledRow } from './LandingPage';
+import { StyledRow } from './CommonStyledComponents';
 import styled from 'styled-components';
-import { FullWidthRow } from './Categories';
 import { CenteredCol } from './LandingPage'
 import { StyledDivider } from './About';
 import ProjectItem from './ProjectItem';
@@ -12,17 +11,45 @@ import ProjectItem from './ProjectItem';
 const StyledRowWithBG = styled(StyledRow)`
 background-image: url(${BG});
 background-size: cover;
+width: 100%;
+overflow: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 80px;
 `
 
 const ProjectItemCol = styled(Col)`
 display: flex;
 justify-content: center;
 align-items: center;
+align-content: center;
 overflow-y: visible;
 overflow-x: scroll;
 padding-left: 1400px;
 padding-right: 100px;
 height: 200px;
+
+@media only screen and (min-width: 1200px) {
+    height: 89%;
+   }
+   
+   @media only screen and (min-width: 1600px) {
+     height: 89%;
+   }
+
+`
+
+const HeadingCenteredCol = styled(CenteredCol)`
+flex-directoin: column;
+overflow-y: visible;
+@media only screen and (min-width: 1200px) {
+    height: 21%;
+   }
+   
+   @media only screen and (min-width: 1600px) {
+     height: 21%;
+   }
 `
 
 const ProjectData = [
@@ -117,14 +144,12 @@ const ProjectData = [
 const Projects = () => {
     return (
         <StyledRowWithBG>
-            <FullWidthRow style={{marginBottom: '80px'}}>
-                <CenteredCol style={{ flexDirection: 'column', height: '1300px', overflowY: 'visible' }} span={24}>
+            <HeadingCenteredCol span={24}>
                 <StyledDivider>Projects</StyledDivider>
-                    <ProjectItemCol span={14}>
-                        {ProjectData.map((data)=>{ return <ProjectItem data={data}/>})}
-                    </ProjectItemCol>
-                </CenteredCol>
-            </FullWidthRow>
+            </HeadingCenteredCol>
+            <ProjectItemCol span={20}>
+                {ProjectData.map((data) => { return <ProjectItem data={data} /> })}
+            </ProjectItemCol>
         </StyledRowWithBG>
     );
 }

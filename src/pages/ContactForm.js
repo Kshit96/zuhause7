@@ -6,13 +6,22 @@ import { BoldP, CenteredCol } from './LandingPage';
 import emailjs from 'emailjs-com';
 import { ReactComponent as Send } from '../icons/Send.svg';
 
-const StyledRow = styled(Row)`
+const StyledRowBG = styled(Row)`
 display: flex;
-height: 80vh;
-width: 41vw;
 background-image: url(${BG});
 background-size: cover;
 justify-content: center;
+background-position: center;
+
+@media only screen and (min-width: 1200px) {
+    height: 100%;
+    width: 100%;
+   }
+   
+   @media only screen and (min-width: 1600px) {
+     height: 100%;
+     width: 100%;
+   }
 `;
 
 const HeaderCol = styled(Col)`
@@ -117,7 +126,7 @@ const ContactForm = props => {
     };
 
     return (
-        <StyledRow>
+        <StyledRowBG>
             <HeaderCol span={24}>
                 <StyledP>Don't be shy!</StyledP>
                 <StyledP>Feel <BoldP>at home</BoldP> and write to us!</StyledP>
@@ -149,7 +158,7 @@ const ContactForm = props => {
                     </Form.Item>
                 </Form>
             </FormCol>
-        </StyledRow>
+        </StyledRowBG>
     )
 }
 

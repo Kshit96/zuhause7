@@ -2,49 +2,17 @@ import { Row, Col } from 'antd';
 import styled from 'styled-components';
 import { ReactComponent as Logo } from '../images/ZuHause_Logo_Complete_Light.svg';
 import BG from '../images/LandingPageBG.png';
-
-
-
-
-export const StyledRow = styled(Row)`
-display: flex;
-
-@media only screen and (max-width: 600px) {
-  height: 600px;
-  width: 100%;
-}
-
-@media only screen and (min-width: 600px) {
-  height: 600px;
-  width: 100%;
-}
-
-@media only screen and (min-width: 768px) {
-  height: 768;
-  width: 100%;
-}
-
-@media only screen and (min-width: 992px) {
-  height: 768px;
-  width: 100%;
-}
-
-@media only screen and (min-width: 1200px) {
-  height: 768px;
-  width: 100%;
-}
-
-@media only screen and (min-width: 1600px) {
-  height: 1080px;
-  width: 100%;
-}
-
-`
+import { StyledRow, FullWidthRow } from './CommonStyledComponents';
 
 const StyledRowWithBG = styled(StyledRow)`
 background-image: url(${BG});
 background-size: cover;
 background-position: center;
+display: flex;
+align-content: center;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 `
 
 
@@ -52,7 +20,6 @@ export const CenteredCol = styled(Col)`
 display: flex;
 align-items: center;
 justify-content: center;
-
 `
 
 export const IntroductionCol = styled(CenteredCol)`
@@ -61,22 +28,6 @@ text-align: center;
 color: #FCFEFB;
 font-size: 1.188rem;
 display: inline;
-
-@media only screen and (max-width: 600px) {
-  font-size:0.5rem;
-}
-
-@media only screen and (min-width: 600px) {
-  font-size:0.5rem;
-}
-
-@media only screen and (min-width: 768px) {
-  font-size:0.75rem;
-}
-
-@media only screen and (min-width: 992px) {
-  font-size:1rem;
-}
 
 @media only screen and (min-width: 1200px) {
   font-size: 1rem;
@@ -111,36 +62,28 @@ height:100%;
 `
 
 const LandingPage = () => {
-    return (
-      <StyledRowWithBG justify="center" align="middle">
-        <Col>
-          <Row>
-            <CenteredCol
-            xs={{span: 10, offset: 7}}
-            sm={{span: 10, offset: 7}}
-            md={{span: 10, offset: 7}}
-            lg={{span: 4, offset: 10}}
-            xl={{span: 4, offset: 10}}
-            xxl={{span: 4, offset: 10}}>
-              <StyledLogo style={{ alignSelf: 'flex-end' }} />
-            </CenteredCol>
-          </Row>
-          <Row>
-            <IntroductionCol span={18} offset={3}>
-              <br />
-              <p>Zu•hau•se  / [tsuˈhauzə] /, meaning <BoldP>at home</BoldP>, is a dream put to implementation by <BoldP>Zahra Chadha.</BoldP>
-              <br /><br />
-              Our aim is to ensure you get what you want to make your spaces as <BoldP>functional, comfortable and warm</BoldP> as possible.<br/>
-              Let your dreams of getting that specific lighting, furniture, signature art piece, flooring or rugs be converted into reality by Zuhause7.<br/>
-              We get the best, and more importantly what you need, from the Europe and the USA. And if that does not satiate your desire for your dream space,
-              we can help you source it locally to your bespoke requirements as well.</p>
-              <br /><br /><br /><br /><br />
-            </IntroductionCol>
-          </Row>
-        </Col>
-      </StyledRowWithBG>
-    );
-  }
+  return (
+    <StyledRowWithBG justify="center" align="middle">
+      <FullWidthRow><CenteredCol
+        xxl={{ span: 4 }}>
+        <StyledLogo style={{ alignSelf: 'flex-end' }} />
+      </CenteredCol>
+        <FullWidthRow>
+        </FullWidthRow>
+        <IntroductionCol xxl={{ span: 18 }}>
+          <br />
+          <p>Zu•hau•se  / [tsuˈhauzə] /, meaning <BoldP>at home</BoldP>, is a dream put to implementation by <BoldP>Zahra Chadha.</BoldP>
+            <br /><br />
+            Our aim is to ensure you get what you want to make your spaces as <BoldP>functional, comfortable and warm</BoldP> as possible.<br />
+            Let your dreams of getting that specific lighting, furniture, signature art piece, flooring or rugs be converted into reality by Zuhause7.<br />
+            We get the best, and more importantly what you need, from the Europe and the USA. And if that does not satiate your desire for your dream space,
+            we can help you source it locally to your bespoke requirements as well.</p>
+          <br /><br /><br /><br /><br />
+        </IntroductionCol>
+      </FullWidthRow>
+    </StyledRowWithBG>
+  );
+}
 
 
-  export default LandingPage;
+export default LandingPage;

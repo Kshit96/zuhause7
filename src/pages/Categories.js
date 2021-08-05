@@ -1,21 +1,44 @@
 import React, { useEffect, useState} from 'react';
 import { Row, Image, Modal } from 'antd';
 import BG from '../images/CategoriesBG.png';
-import { StyledRow, CenteredCol, IntroductionCol, BoldP } from './LandingPage';
+import { CenteredCol, IntroductionCol, BoldP } from './LandingPage';
 import styled from 'styled-components';
 import Furniture from '../images/Furniture.jpeg';
 import Lighting from '../images/Lighting.jpeg';
 import Artefacts from '../images/Artefacts.jpeg';
 import { LIGHTING, FURNITURE, ARTEFACTS } from '../data/CatalogueImages';
 import ProductGallery from './ProductGallery';
+import { StyledRow, FullWidthRow } from './CommonStyledComponents';
+
 
 const StyledRowWithBG = styled(StyledRow)`
 background-image: url(${BG});
 background-size: cover;
+align-content: center;
 `
-export const FullWidthRow = styled(Row)`
-width: 100%;
-overflow: hidden;
+
+export const FullWidthRowIntro = styled(FullWidthRow)`
+
+@media only screen and (min-width: 1200px) {
+    height: 30%;
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    height: 30%;
+  }
+`
+
+export const FullWidthRowSpaceAround = styled(FullWidthRow)`
+justify-content: space-around;
+align-content: center;
+
+@media only screen and (min-width: 1200px) {
+    height: 60%;
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    height: 60%;
+  }
 `
 
 const HeadingP = styled.p`
@@ -168,7 +191,7 @@ const Categories = () => {
             <StyledModalWithBG visible={isModalVisible} footer={null}  onCancel={handleCancel} width={'80vw'} height={'80vh'}>
                 <ProductGallery images={images}/>
             </StyledModalWithBG>
-            <FullWidthRow style={{ height: '40%' }}>
+            <FullWidthRowIntro>
                 <CenteredCol style={{ flexDirection: 'column' }} span={24}>
                     <HeadingP className={'fade-in-wrapper fade-in-wrapper-animate'}>Explore Now</HeadingP>
                     <StyledHR className={'hr-wrapper'}><hr className={'styled-hr styled-hr-animate'}/></StyledHR>
@@ -179,8 +202,8 @@ const Categories = () => {
                         all your interior spaces feel <BoldP>at home.</BoldP>
                     </IntroductionCol>
                 </CenteredCol>
-            </FullWidthRow>
-            <FullWidthRow justify='space-around' style={{ height: '60%' }}>
+            </FullWidthRowIntro>
+            <FullWidthRowSpaceAround>
                 <ImageCol span={6} onClick={()=>showModal('FURNITURE')}>
                     <Image preview={false} src={Furniture} />
                     <StyledSpan><HeadingP>FURNITURE</HeadingP></StyledSpan>
@@ -193,7 +216,7 @@ const Categories = () => {
                     <Image preview={false} src={Artefacts} />
                     <StyledSpan><HeadingP>ARTEFACTS</HeadingP></StyledSpan>
                 </ImageCol>
-            </FullWidthRow>
+            </FullWidthRowSpaceAround>
         </StyledRowWithBG>
     );
 }

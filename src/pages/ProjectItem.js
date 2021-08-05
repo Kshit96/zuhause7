@@ -4,10 +4,6 @@ import styled from 'styled-components';
 import BG from '../images/ProjectItem.jpg';
 import { CenteredCol } from './LandingPage';
 
-
-const BorderedCenteredCol = styled(CenteredCol)`
-`
-
 const StyledDiv = styled.div`
 background-image: url(${BG});
 background-size: cover;
@@ -44,7 +40,7 @@ transition: margin-top 0.5s;
 const ContainerDiv = styled.div`
 height: 560px;
 width: 400px;
-margin: 10rem 0rem 0 0rem;
+margin: -20rem 0rem 0 0rem;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -59,7 +55,7 @@ flex-direction: column;
     border-bottom: 1px;
     width: 400px;
     height: 1px;
-    bottom: 215px;
+    top: 41.3%;
 }
 
 // &:before{
@@ -265,11 +261,11 @@ const ProjectItem = props => {
                     })}
             </ProjectDiv>
             <Row className={'year-row'}>
-                <BorderedCenteredCol className={'year-col'} span={24}>
+                <CenteredCol className={'year-col'} span={24}>
                     <StyledDiv className={'year-div'}>
                         <span className={'year-span'}>{props.data.projectYearShort}</span>
                     </StyledDiv>
-                </BorderedCenteredCol>
+                </CenteredCol>
             </Row>
             <FooterSpan className={'footer-span'}>{props.data.type}</FooterSpan>
         </ContainerDiv>
