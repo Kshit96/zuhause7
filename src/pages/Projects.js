@@ -20,11 +20,11 @@ margin-bottom: 80px;
 background-position: center;
 
 @media only screen and (max-width: 600px) {
-    height: 600px;
+    height: 768px;
     width: 100%;
   }
   @media only screen and (min-width: 600px) {
-    height: 600px;
+    height: 768px;
     width: 100%;
   }
 
