@@ -15,6 +15,16 @@ width: 100%;
 overflow: hidden;
 background-position: center;
 
+@media only screen and (max-width: 600px) {
+    height: 768px;
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    height: 768px;
+    width: 100%;
+  }
+
 @media only screen and (min-width: 768px) {
     height: 768px;
     width: 100%;
@@ -40,6 +50,14 @@ background-position: center;
 const HeadingCenteredCol = styled(CenteredCol)`
 flex-direction: column;
 
+@media only screen and (max-width: 600px) {
+    height: 45%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    height: 45%;
+  }
+
 @media only screen and (min-width: 768px) {
     height: 45%;
   }
@@ -58,6 +76,14 @@ flex-direction: column;
 `
 
 const TextCenteredCol = styled(CenteredCol)`
+
+@media only screen and (max-width: 600px) {
+    height: 55%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    height: 55%;
+  }
 
 @media only screen and (min-width: 768px) {
     height: 55%;
@@ -82,14 +108,21 @@ color: #0F121A;
 display: inline;
 overflow: hidden;
 
-@media only screen and (min-width: 992px) {
+@media only screen and (max-width: 600px) {
+    font-size: 0.7rem;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 0.7rem;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 0.8rem;
+  }
+  @media only screen and (min-width: 992px) {
     font-size: 0.9rem;
   }
-  
   @media only screen and (min-width: 1200px) {
     font-size: 0.9rem;
   }
-  
   @media only screen and (min-width: 1600px) {
     font-size: 1.188rem;
   }
@@ -110,6 +143,17 @@ border-radius: 50%;
 
 object-fit: cover;
 object-position: center right;
+
+@media only screen and (max-width: 600px) {
+    width: 200px;
+    height: 200px;
+    margin-top: 48%;
+  }
+  @media only screen and (min-width: 600px) {
+    width: 200px;
+    height: 200px;
+    margin-top: 48%;
+  }
 
 @media only screen and (min-width: 768px) {
     width: 250px;
@@ -153,22 +197,33 @@ min-width: 60%!Important;
     top: 0!important;
 }
 
+@media only screen and (max-width: 600px) {
+    font-size: 1.5rem!important;
+    max-width: 80%!Important;
+    min-width: 80%!Important;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 1.5rem!important;
+    max-width: 80%!Important;
+    min-width: 80%!Important;
+  }
+
 @media only screen and (min-width: 768px) {
-    font-size: 35px!important;
+    font-size: 1.5rem!important;
     max-width: 80%!Important;
     min-width: 80%!Important;
   }
 
 @media only screen and (min-width: 992px) {
-    font-size: 35px!important;
+    font-size: 2rem!important;
   }
   
   @media only screen and (min-width: 1200px) {
-    font-size: 35px!important;
+    font-size: 2rem!important;
   }
   
   @media only screen and (min-width: 1600px) {
-    font-size: 40px!important;
+    font-size: 2rem!important;
   }
 
 `
@@ -182,6 +237,8 @@ const About = () => {
             </HeadingCenteredCol>
             <TextCenteredCol span={24}>
                 <AboutCol 
+                    xs={{ span: 19 }}
+                    sm={{ span: 19 }}
                     md={{ span: 18 }}
                     lg={{ span: 18 }}
                     xl={{ span: 18 }}

@@ -39,6 +39,16 @@ background-size: cover;
 align-content: center;
 background-position: center;
 
+@media only screen and (max-width: 600px) {
+    height: 768px;
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    height: 768px;
+    width: 100%;
+  }
+
 @media only screen and (min-width: 768px) {
     height: 768px;
     width: 100%;
@@ -63,6 +73,15 @@ background-position: center;
 
 export const FullWidthRowIntro = styled(FullWidthRow)`
 
+
+@media only screen and (max-width: 600px) {
+    height: 30%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    height: 30%;
+  }
+
 @media only screen and (min-width: 768px) {
     height: 30%;
   }
@@ -85,6 +104,14 @@ justify-content: space-around;
 align-content: center;
 flex-direction: column;
 
+@media only screen and (max-width: 600px) {
+    height: 60%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    height: 60%;
+  }
+
 @media only screen and (min-width: 768px) {
     height: 60%;
     overflow-x: scroll;
@@ -105,9 +132,33 @@ flex-direction: column;
 
 const HeadingP = styled.p`
 font-family: AvenirNextBold;
-font-size: 35px;
 color: #FCFEFB;
 margin: 0;
+
+@media only screen and (max-width: 600px) {
+    font-size: 2rem;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    font-size: 2rem;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    font-size: 2rem;
+  }
+  
+  @media only screen and (min-width: 992px) {
+    font-size: 2rem;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    font-size: 2rem;
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    font-size: 2.188rem;
+  }
+
 `
 
 const StyledHR = styled.div`
@@ -136,6 +187,17 @@ transition: height 0.5s, width 0.5s;
     position: absolute!important;
 }
 
+
+@media only screen and (max-width: 600px) {
+    width: 24rem;
+    height: 20rem;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    width: 24rem;
+    height: 20rem;
+  }
+
 @media only screen and (min-width: 768px) {
     margin: 0 4rem;
     width: 24rem;
@@ -163,6 +225,15 @@ transition: height 0.5s, width 0.5s;
     
     cursor: pointer;
     
+    @media only screen and (max-width: 600px) {
+        width: 28rem;
+        height: 24rem;
+      }
+      
+      @media only screen and (min-width: 600px) {
+        width: 28rem;
+        height: 24rem;
+      }
 
     @media only screen and (min-width: 992px) {
         width: 28rem;
@@ -187,6 +258,18 @@ img{
     align-self: center;
     transition: width 0.5s;
 
+    @media only screen and (max-width: 600px) {
+        width: 26rem;
+      }
+      
+      @media only screen and (min-width: 600px) {
+        width: 26rem;
+      }
+    
+    @media only screen and (min-width: 768px) {
+        width: 26rem;
+      }
+
     @media only screen and (min-width: 992px) {
         width: 26rem;
       }
@@ -204,6 +287,18 @@ img{
     transform-origin: center;
     transition: width 0.5s;
     width: 45rem;
+
+    @media only screen and (max-width: 600px) {
+        width: 40rem;
+      }
+      
+      @media only screen and (min-width: 600px) {
+        width: 40rem;
+      }
+    
+    @media only screen and (min-width: 768px) {
+        width: 40rem;
+      }
 
     @media only screen and (min-width: 992px) {
         width: 40rem;
@@ -320,6 +415,19 @@ const Categories = () => {
             imageHeight= '480px';
             imageWidth= '480px';
         }
+        else if(width>=768){
+            imageHeight= '480px';
+            imageWidth= '480px';
+        }
+        else if(width>=600){
+            imageHeight= '360px';
+            imageWidth= '480px';
+        }
+        else if(width<600){
+            imageHeight= '360px';
+            imageWidth= '480px';
+        }
+
 
         if(category === 'FURNITURE'){
             setImages(()=>FURNITURE({imageHeight, imageWidth}));
@@ -342,10 +450,17 @@ const Categories = () => {
                 <CenteredCol style={{ flexDirection: 'column' }} span={24}>
                     <HeadingP className={'fade-in-wrapper fade-in-wrapper-animate'}>Explore Now</HeadingP>
                     <StyledHR className={'hr-wrapper'}><hr className={'styled-hr styled-hr-animate'}/></StyledHR>
-                    <IntroductionCol style={{ marginTop: '2rem' }}>
+                    <IntroductionCol
+                    xs={{ span: 18 }}
+                    sm={{ span: 18 }}
+                    md={{ span: 22 }} 
+                    lg={{ span: 18 }}
+                    xl={{ span: 18 }}
+                    xxl={{ span: 18 }}
+                    style={{ marginTop: '2rem' }}>
                         Residential Projects. Commercial Spaces. Show flats. Clinics.<br />
                         We can retrofit your space no matter what segment it belongs to.<br />
-                        Explore through our range of products that we can help you source and make<br />
+                        Explore through our range of products that we can help you source and make
                         all your interior spaces feel <BoldP>at home.</BoldP>
                     </IntroductionCol>
                 </CenteredCol>

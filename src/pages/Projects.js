@@ -19,6 +19,15 @@ align-items: center;
 margin-bottom: 80px;
 background-position: center;
 
+@media only screen and (max-width: 600px) {
+    height: 600px;
+    width: 100%;
+  }
+  @media only screen and (min-width: 600px) {
+    height: 600px;
+    width: 100%;
+  }
+
 @media only screen and (min-width: 768px) {
     height: 768px;
     width: 100%;
@@ -68,8 +77,19 @@ white-space: no-wrap;
 `
 
 const HeadingCenteredCol = styled(CenteredCol)`
-flex-directoin: column;
+flex-direction: column;
 overflow-y: visible;
+
+@media only screen and (max-width: 600px) {
+    height: 21%;
+  }
+  @media only screen and (min-width: 600px) {
+    height: 21%;
+  }
+
+@media only screen and (min-width: 768px) {
+    height: 21%;
+  }
 
 @media only screen and (min-width: 992px) {
     height: 21%;

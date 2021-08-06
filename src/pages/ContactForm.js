@@ -24,6 +24,14 @@ display: inline;
 margin: 1rem 0 0 0;
 height: 5rem;
 
+
+@media only screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
+  @media only screen and (min-width: 600px) {
+    font-size: 1rem;
+  }
+
 @media only screen and (min-width: 768px) {
     font-size: 1.5rem;
   }
@@ -51,6 +59,12 @@ const FormCol = styled(CenteredCol)`
 align-items: baseline;
 
 
+@media only screen and (max-width: 600px) {
+    margin-top: 0rem;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-top: 0rem;
+  }
 
 @media only screen and (min-width: 768px) {
     margin-top: 0rem;
@@ -69,6 +83,13 @@ align-items: baseline;
   }
 
 label{
+
+    @media only screen and (max-width: 600px) {
+        font-size: 0.8rem;
+      }
+      @media only screen and (min-width: 600px) {
+        font-size: 0.8rem;
+      }
 
     @media only screen and (min-width: 768px) {
         font-size: 1rem;
@@ -100,7 +121,6 @@ border-color: #0F121A;
 
 const StyledButton = styled(Button)`
 transition: box-shadow 1s, border-color 1s;
-width: 10rem;
 margin-top: 1rem;
 border-color: #0F121A;
 background-color: #FFFFFF;
@@ -123,27 +143,47 @@ overflow: hidden;
   }
 
   p{
-    margin-top: -2.2rem;
     margin-left: 0;
     transition: margin-left 2s, opactiy 1s;
+    text-align:center;
+    vertical-align: center;
     font-size: 1.3rem;
     align-self: center;
     margin-right: 0rem;
 
+    @media only screen and (max-width: 600px) {
+        margin-top: -2.2rem;
+        font-size: 1rem;
+        width: 7rem;
+      }
+      @media only screen and (min-width: 600px) {
+        margin-top: -2.2rem;
+        font-size: 1rem;
+        width: 7rem;
+      }
+
     @media only screen and (min-width: 768px) {
+        margin-top: -2.2rem;
         font-size: 1.25rem;
+        width: 10rem;
       }
 
     @media only screen and (min-width: 992px) {
+        margin-top: -2.2rem;
         font-size: 1.25rem;
+        width: 10rem;
       }
       
       @media only screen and (min-width: 1200px) {
+        margin-top: -2.2rem;
         font-size: 1.25rem;
+        width: 10rem;
       }
       
       @media only screen and (min-width: 1600px) {
+        margin-top: -2.2rem;
         font-size: 1.3rem;
+        width: 10rem;
       }
     }
     

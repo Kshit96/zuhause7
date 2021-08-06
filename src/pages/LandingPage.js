@@ -14,6 +14,16 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 
+@media only screen and (max-width: 600px) {
+  height: 768px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  height: 768px;
+  width: 100%;
+}
+
 @media only screen and (min-width: 768px) {
   height: 768px;
   width: 100%;
@@ -49,6 +59,14 @@ text-align: center;
 color: #FCFEFB;
 font-size: 1.188rem;
 display: inline;
+
+@media only screen and (max-width: 600px) {
+  font-size: 0.7rem;
+}
+
+@media only screen and (min-width: 600px) {
+  font-size: 0.7rem;
+}
 
 @media only screen and (min-width: 768px) {
   font-size: 0.8rem;
@@ -95,6 +113,8 @@ const LandingPage = () => {
   return (
     <StyledRowWithBG justify="center" align="middle">
       <FullWidthRow><CenteredCol
+        xs={{ span: 8 }}
+        sm={{ span: 8 }}
         md={{ span: 6 }}
         lg={{ span: 4 }}
         xl={{ span: 4 }}
@@ -102,8 +122,9 @@ const LandingPage = () => {
         <StyledLogo style={{ alignSelf: 'flex-end' }} />
       </CenteredCol>
         <FullWidthRow>
-        </FullWidthRow>
         <IntroductionCol
+        xs={{ span: 18 }}
+        sm={{ span: 18 }}
         md={{ span: 22 }} 
         lg={{ span: 18 }}
         xl={{ span: 18 }}
@@ -117,6 +138,7 @@ const LandingPage = () => {
             we can help you source it locally to your bespoke requirements as well.</p>
           <br /><br /><br /><br /><br />
         </IntroductionCol>
+        </FullWidthRow>
       </FullWidthRow>
     </StyledRowWithBG>
   );
