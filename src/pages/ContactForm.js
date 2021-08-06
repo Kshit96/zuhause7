@@ -12,26 +12,30 @@ background-image: url(${BG});
 background-size: cover;
 justify-content: center;
 background-position: center;
-
-@media only screen and (min-width: 1200px) {
-    height: 100%;
-    width: 100%;
-   }
-   
-   @media only screen and (min-width: 1600px) {
-     height: 100%;
-     width: 100%;
-   }
+height: 100%;
+width: 100%;
 `;
 
 const HeaderCol = styled(Col)`
 text-shadow: 0px 0px 20px #A99060;
 text-align: center;
 color: #FCFEFB;
-font-size: 1.5rem;
 display: inline;
 margin: 1rem 0 0 0;
 height: 5rem;
+
+@media only screen and (min-width: 992px) {
+    font-size: 1.2rem;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    font-size: 1.2rem;
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    font-size: 1.5rem;
+  }
+
 `
 
 const StyledP = styled.p`
@@ -43,7 +47,17 @@ const FormCol = styled(CenteredCol)`
 align-items: baseline;
 margin-top: -1rem;
 label{
-    font-size: 18px!important;
+    @media only screen and (min-width: 992px) {
+        font-size: 1rem;
+      }
+      
+      @media only screen and (min-width: 1200px) {
+        font-size: 1rem;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        font-size: 1.125rem;
+      }
 }
 `
 
@@ -84,15 +98,29 @@ overflow: hidden;
   p{
     margin-top: -2.2rem;
     margin-left: 0;
-    transition: margin-left 2s;
+    transition: margin-left 2s, opactiy 1s;
     font-size: 1.3rem;
     align-self: center;
     margin-right: 0rem;
+
+    @media only screen and (min-width: 992px) {
+        font-size: 1.25rem;
+      }
+      
+      @media only screen and (min-width: 1200px) {
+        font-size: 1.25rem;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        font-size: 1.3rem;
+      }
     }
     
     &:hover p{
-      margin-left: 9.375rem;
-      transition: margin-left 1s;
+    opacity: 0;
+    color: black;
+    margin-left: 9.375rem;
+    transition: margin-left 1s, opacity 0.5s;
     }
     
     &:hover svg{

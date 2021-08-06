@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import { Row, Image, Modal } from 'antd';
+import { Image, Modal } from 'antd';
 import BG from '../images/CategoriesBG.png';
 import { CenteredCol, IntroductionCol, BoldP } from './LandingPage';
 import styled from 'styled-components';
@@ -10,6 +10,28 @@ import { LIGHTING, FURNITURE, ARTEFACTS } from '../data/CatalogueImages';
 import ProductGallery from './ProductGallery';
 import { StyledRow, FullWidthRow } from './CommonStyledComponents';
 
+function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
+  
+  export function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  
+    useEffect(() => {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+  
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    return windowDimensions;
+  }
 
 const StyledRowWithBG = styled(StyledRow)`
 background-image: url(${BG});
@@ -189,6 +211,10 @@ p{
 `
 
 const StyledModalWithBG = styled(Modal)`
+
+height: 80vh;
+width: 80vw!important;
+
 .ant-modal-body{
     padding: 0;
     background-color: #0F121A!important;
@@ -209,6 +235,9 @@ const Categories = () => {
 
     const [images, setImages] = useState([]);
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const { height, width } = useWindowDimensions();
+
+    console.log(height, width);
 
     const handleCancel = () => {
         setIsModalVisible(false);
@@ -239,22 +268,39 @@ const Categories = () => {
           observer.observe(document.querySelector('.fade-in-wrapper'));
     },[])
 
+    let imageWidth= '720px';
+    let imageHeight= '720px';
+
     const showModal = category => {
+
+        if(width>= 1600){
+            imageHeight= '720px';
+            imageWidth= '720px';
+        }
+        else if(width>=1200){
+            imageHeight= '480px';
+            imageWidth= '480px';
+        }
+        else if(width>=992){
+            imageHeight= '600px';
+            imageWidth= '600px';
+        }
+
         if(category === 'FURNITURE'){
-            setImages(FURNITURE);
+            setImages(()=>FURNITURE({imageHeight, imageWidth}));
         }
         else if(category === 'LIGHTING'){
-            setImages(LIGHTING);
+            setImages(()=>LIGHTING(({imageHeight, imageWidth})));
         }
         else{
-            setImages(ARTEFACTS);
+            setImages(()=>ARTEFACTS(({imageHeight, imageWidth})));
         }
         setIsModalVisible(true);
     }
 
     return (
         <StyledRowWithBG>
-            <StyledModalWithBG visible={isModalVisible} footer={null}  onCancel={handleCancel} width={'80vw'} height={'80vh'}>
+            <StyledModalWithBG visible={isModalVisible} footer={null}  onCancel={handleCancel}>
                 <ProductGallery images={images}/>
             </StyledModalWithBG>
             <FullWidthRowIntro>

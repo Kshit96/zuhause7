@@ -76,6 +76,22 @@ export const StyledModal = styled(Modal)`
   align-content: center;
   align-items: center;
 
+  @media only screen and (min-width: 992) {
+  
+    width: 100%!important;
+    margin-top: -1%;
+  
+    .ant-modal-content{
+      height: 650px;
+      width: 45%!important;
+  }
+  .ant-modal-body{
+    height: 650px;
+    width: 100%!important;
+  }
+   }
+
+
 @media only screen and (min-width: 1200px) {
   
   width: 100%!important;

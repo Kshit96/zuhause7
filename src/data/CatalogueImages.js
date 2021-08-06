@@ -1,90 +1,97 @@
 import furniture from '../images/Furniture.jpeg'
 import lighting from '../images/Lighting.jpeg'
 import artefacts from '../images/Artefacts.jpeg'
-export const FURNITURE =[
-    {
+export const FURNITURE = (scale) => {
+  return (
+    [
+      {
         original: furniture,
         thumbnail: furniture,
-        originalHeight: '600px',
-        originalWidth: '1300px',
+        originalHeight: scale.imageHeight,
+        originalWidth: scale.imageWidth,
       },
       {
         original: furniture,
         thumbnail: furniture,
-        originalHeight: '600px',
-        originalWidth: '300px',
-      },{
+        originalHeight: scale.imageHeight,
+        originalWidth: scale.imageWidth,
+      }, {
         original: furniture,
         thumbnail: furniture,
-        originalHeight: '600px',
-        originalWidth: '300px',
+        originalHeight: scale.imageHeight,
+        originalWidth: scale.imageWidth,
       },
       {
         original: furniture,
         thumbnail: furniture,
-        originalHeight: '600px',
-        originalWidth: '1300px',
+        originalHeight: scale.imageHeight,
+        originalWidth: scale.imageWidth,
       },
       {
         original: furniture,
         thumbnail: furniture,
-        originalHeight: '600px',
-        originalWidth: '300px',
-      },{
+        originalHeight: scale.imageHeight,
+        originalWidth: scale.imageWidth,
+      }, {
         original: furniture,
         thumbnail: furniture,
-        originalHeight: '600px',
-        originalWidth: '300px',
+        originalHeight: scale.imageHeight,
+        originalWidth: scale.imageWidth,
       },
       {
         original: furniture,
         thumbnail: furniture,
-        originalHeight: '600px',
-        originalWidth: '300px',
-      },{
+        originalHeight: scale.imageHeight,
+        originalWidth: scale.imageWidth,
+      }, {
         original: furniture,
         thumbnail: furniture,
-        originalHeight: '600px',
-        originalWidth: '300px',
+        originalHeight: scale.imageHeight,
+        originalWidth: scale.imageWidth,
       },
-];
+    ]
+  )
+};
 
-export const LIGHTING =[
-    {
-        original: lighting,
-        thumbnail: lighting,
-        originalHeight: '600px',
-        originalWidth: '300px',
-      },
-      {
-        original: lighting,
-        thumbnail: lighting,
-        originalHeight: '600px',
-        originalWidth: '300px',
-      },{
-        original: lighting,
-        thumbnail: lighting,
-        originalHeight: '600px',
-        originalWidth: '300px',
-      },
-];
+export const LIGHTING = scale => {
+  return ([{
+    original: lighting,
+    thumbnail: lighting,
+    originalHeight: scale.imageHeight,
+    originalWidth: scale.imageWidth,
+  },
+  {
+    original: lighting,
+    thumbnail: lighting,
+    originalHeight: scale.imageHeight,
+    originalWidth: scale.imageWidth,
+  }, {
+    original: lighting,
+    thumbnail: lighting,
+    originalHeight: scale.imageHeight,
+    originalWidth: scale.imageWidth,
+  },
+  ])
+};
 
-export const ARTEFACTS =[
+export const ARTEFACTS = scale => {
+  return ([
     {
-        original: artefacts,
-        thumbnail: artefacts,
-        originalHeight: '600px',
-        originalWidth: '300px',
-      },
-      {
-        original: artefacts,
-        thumbnail: artefacts,
-        originalHeight: '600px',
-        originalWidth: '300px',
-      },{
-        original: artefacts,
-        thumbnail: artefacts,
-        originalHeight: '600px',
-        originalWidth: '300px',
-      },
-];
+      original: artefacts,
+      thumbnail: artefacts,
+      originalHeight: scale.imageHeight,
+      originalWidth: scale.imageWidth,
+    },
+    {
+      original: artefacts,
+      thumbnail: artefacts,
+      originalHeight: scale.imageHeight,
+      originalWidth: scale.imageWidth,
+    }, {
+      original: artefacts,
+      thumbnail: artefacts,
+      originalHeight: scale.imageHeight,
+      originalWidth: scale.imageWidth,
+    },
+  ])
+};
