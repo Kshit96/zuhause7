@@ -13,6 +13,27 @@ align-content: center;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+
+@media only screen and (min-width: 768px) {
+  height: 768px!important;
+  width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  height: 768px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+height: 768px;
+width: 100%;
+}
+
+@media only screen and (min-width: 1600px) {
+height: 1080px;
+width: 100%;
+}
+
 `
 
 
@@ -29,12 +50,16 @@ color: #FCFEFB;
 font-size: 1.188rem;
 display: inline;
 
+@media only screen and (min-width: 768px) {
+  font-size: 0.8rem;
+}
+
 @media only screen and (min-width: 992px) {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 @media only screen and (min-width: 1200px) {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 @media only screen and (min-width: 1600px) {
@@ -48,6 +73,7 @@ display: inline;
 // iPhone X: 375 x 812
 // Pixel 2: 411 x 731
 // Tablet: 768 x 1024
+// Laptop: 1280 x 720
 // Laptop: 1366 x 768
 // High-res laptop or desktop: 1920 x 1080
 
@@ -69,6 +95,7 @@ const LandingPage = () => {
   return (
     <StyledRowWithBG justify="center" align="middle">
       <FullWidthRow><CenteredCol
+        md={{ span: 6 }}
         lg={{ span: 4 }}
         xl={{ span: 4 }}
         xxl={{ span: 4 }}>
@@ -76,7 +103,8 @@ const LandingPage = () => {
       </CenteredCol>
         <FullWidthRow>
         </FullWidthRow>
-        <IntroductionCol 
+        <IntroductionCol
+        md={{ span: 22 }} 
         lg={{ span: 18 }}
         xl={{ span: 18 }}
         xxl={{ span: 18 }}>

@@ -17,6 +17,28 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin-bottom: 80px;
+background-position: center;
+
+@media only screen and (min-width: 768px) {
+    height: 768px!important;
+    width: 100%;
+  }
+
+@media only screen and (min-width: 992px) {
+    height: 768px;
+    width: 100%;
+  }
+
+@media only screen and (min-width: 1200px) {
+  height: 768px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1600px) {
+  height: 1080px;
+  width: 100%;
+}
+
 `
 
 const ProjectItemCol = styled(Col)`

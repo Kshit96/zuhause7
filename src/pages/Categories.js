@@ -37,9 +37,35 @@ const StyledRowWithBG = styled(StyledRow)`
 background-image: url(${BG});
 background-size: cover;
 align-content: center;
+background-position: center;
+
+@media only screen and (min-width: 768px) {
+    height: 768px!important;
+    width: 100%;
+  }
+
+@media only screen and (min-width: 992px) {
+    height: 768px;
+    width: 100%;
+  }
+
+@media only screen and (min-width: 1200px) {
+  height: 768px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1600px) {
+  height: 1080px;
+  width: 100%;
+}
+
 `
 
 export const FullWidthRowIntro = styled(FullWidthRow)`
+
+@media only screen and (min-width: 768px) {
+    height: 30%;
+  }
 
 @media only screen and (min-width: 992px) {
     height: 30%;
@@ -57,6 +83,11 @@ export const FullWidthRowIntro = styled(FullWidthRow)`
 export const FullWidthRowSpaceAround = styled(FullWidthRow)`
 justify-content: space-around;
 align-content: center;
+
+@media only screen and (min-width: 768px) {
+    height: 60%;
+    display: block;
+  }
 
 @media only screen and (min-width: 992px) {
     height: 60%;
@@ -103,6 +134,12 @@ transition: height 0.5s, width 0.5s;
 .ant-image{
     position: absolute!important;
 }
+
+@media only screen and (min-width: 768px) {
+    margin: 2rem auto;
+    width: 24rem;
+    height: 20rem;
+  }
 
 @media only screen and (min-width: 992px) {
     width: 24rem;
@@ -205,9 +242,6 @@ p{
     transition: top 0.5s;
 }
 
-
-
-
 `
 
 const StyledModalWithBG = styled(Modal)`
@@ -282,8 +316,8 @@ const Categories = () => {
             imageWidth= '480px';
         }
         else if(width>=992){
-            imageHeight= '600px';
-            imageWidth= '600px';
+            imageHeight= '480px';
+            imageWidth= '480px';
         }
 
         if(category === 'FURNITURE'){

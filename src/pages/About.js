@@ -13,13 +13,35 @@ background-image: url(${BG});
 background-size: cover;
 width: 100%;
 overflow: hidden;
+background-position: center;
+
+@media only screen and (min-width: 768px) {
+    height: 768px!important;
+    width: 100%;
+  }
+
+@media only screen and (min-width: 992px) {
+    height: 768px;
+    width: 100%;
+  }
+
+@media only screen and (min-width: 1200px) {
+  height: 768px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1600px) {
+  height: 1080px;
+  width: 100%;
+}
+
 `
 
 const HeadingCenteredCol = styled(CenteredCol)`
 flex-direction: column;
 
 @media only screen and (min-width: 992px) {
-    height: 30%;
+    height: 45%;
    }
 
 @media only screen and (min-width: 1200px) {
@@ -34,7 +56,7 @@ flex-direction: column;
 const TextCenteredCol = styled(CenteredCol)`
 
 @media only screen and (min-width: 992px) {
-    height: 70%;
+    height: 55%;
    }
 
 @media only screen and (min-width: 1200px) {
@@ -53,11 +75,11 @@ display: inline;
 overflow: hidden;
 
 @media only screen and (min-width: 992px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
   @media only screen and (min-width: 1200px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
   @media only screen and (min-width: 1600px) {
