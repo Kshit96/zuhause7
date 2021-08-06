@@ -3,8 +3,8 @@ import ImageGallery from 'react-image-gallery';
 import styled from 'styled-components';
 
 const StyledImageGallery = styled(ImageGallery)`
-.image-gallery-content{
-
+.image-gallery-thumbnails{
+    overflow: scroll!important;
 }
 `
 
@@ -12,8 +12,10 @@ const ProductGallery = props =>{
     return(
          <StyledImageGallery 
          items={props.images}
-         thumbnailPosition='left'
-         autoplay='true' />
+         thumbnailPosition='bottom'
+         autoplay='true'
+         lazyload='true'
+         disableThumbnailScroll='true' />
     )
 };
 

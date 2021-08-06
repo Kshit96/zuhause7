@@ -19,6 +19,34 @@ export const FURNITURE =[
         originalHeight: '600px',
         originalWidth: '300px',
       },
+      {
+        original: furniture,
+        thumbnail: furniture,
+        originalHeight: '600px',
+        originalWidth: '1300px',
+      },
+      {
+        original: furniture,
+        thumbnail: furniture,
+        originalHeight: '600px',
+        originalWidth: '300px',
+      },{
+        original: furniture,
+        thumbnail: furniture,
+        originalHeight: '600px',
+        originalWidth: '300px',
+      },
+      {
+        original: furniture,
+        thumbnail: furniture,
+        originalHeight: '600px',
+        originalWidth: '300px',
+      },{
+        original: furniture,
+        thumbnail: furniture,
+        originalHeight: '600px',
+        originalWidth: '300px',
+      },
 ];
 
 export const LIGHTING =[

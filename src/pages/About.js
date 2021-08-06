@@ -17,6 +17,11 @@ overflow: hidden;
 
 const HeadingCenteredCol = styled(CenteredCol)`
 flex-direction: column;
+
+@media only screen and (min-width: 992px) {
+    height: 30%;
+   }
+
 @media only screen and (min-width: 1200px) {
    height: 45%;
   }
@@ -27,21 +32,38 @@ flex-direction: column;
 `
 
 const TextCenteredCol = styled(CenteredCol)`
+
+@media only screen and (min-width: 992px) {
+    height: 70%;
+   }
+
 @media only screen and (min-width: 1200px) {
-    height: 75%;
+    height: 55%;
   }
   
   @media only screen and (min-width: 1600px) {
-    height: 75%;
+    height: 55%;
   }
 `
 
 export const AboutCol = styled(CenteredCol)`
 text-align: center;
 color: #0F121A;
-font-size: 19px;
 display: inline;
 overflow: hidden;
+
+@media only screen and (min-width: 992px) {
+    font-size: 1rem;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    font-size: 1rem;
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    font-size: 1.188rem;
+  }
+
 `
 
 export const BoldP = styled.p`
@@ -53,18 +75,36 @@ display: inline;
 `
 
 const StyledImage = styled(Image)`
-width: 300px;
-height: 300px;
+
 border-radius: 50%;
-margin-top: 7.1rem;
+
 object-fit: cover;
 object-position: center right;
+
+@media only screen and (min-width: 992px) {
+    width: 250px;
+    height: 250px;
+    margin-top: 17%;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    width: 250px;
+    height: 250px;
+    margin-top: 17%;
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    width: 350px;
+    height: 350px;
+    margin-top: 18%;
+  }
+
 `
 export const StyledDivider = styled(Divider)`
 text-shadow: 0px 0px 30px #A99060;
 color: #0F121A!Important;
 font-family: AvenirNextBold;
-font-size: 40px!important;
+
 max-width: 60%!Important;
 min-width: 60%!Important;
 &::before{
@@ -76,6 +116,18 @@ min-width: 60%!Important;
     border-top-color: rgba(15, 18, 26, 1)!Important;
     top: 0!important;
 }
+
+@media only screen and (min-width: 992px) {
+    font-size: 35px!important;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    font-size: 35px!important;
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    font-size: 40px!important;
+  }
 
 `
 

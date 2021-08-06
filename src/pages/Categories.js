@@ -19,6 +19,10 @@ align-content: center;
 
 export const FullWidthRowIntro = styled(FullWidthRow)`
 
+@media only screen and (min-width: 992px) {
+    height: 30%;
+  }
+
 @media only screen and (min-width: 1200px) {
     height: 30%;
   }
@@ -31,6 +35,10 @@ export const FullWidthRowIntro = styled(FullWidthRow)`
 export const FullWidthRowSpaceAround = styled(FullWidthRow)`
 justify-content: space-around;
 align-content: center;
+
+@media only screen and (min-width: 992px) {
+    height: 60%;
+  }
 
 @media only screen and (min-width: 1200px) {
     height: 60%;
@@ -62,8 +70,6 @@ const StyledHR = styled.div`
 `
 
 const ImageCol = styled.div`
-width: 30rem;
-height: 25rem;
 overflow: hidden;
 display: flex;
 position: relative;
@@ -75,12 +81,44 @@ transition: height 0.5s, width 0.5s;
 .ant-image{
     position: absolute!important;
 }
+
+@media only screen and (min-width: 992px) {
+    width: 24rem;
+    height: 20rem;
+  }
+
+@media only screen and (min-width: 1200px) {
+    width: 24rem;
+    height: 20rem;
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    width: 30rem;
+    height: 25rem;
+  }
+
 &:hover{
     transition: height 0.5s, width 0.5s;
     transform-origin: center;
-    height: 30rem;
+    
     cursor: pointer;
-    width: 35rem!Important;
+    
+
+    @media only screen and (min-width: 992px) {
+        width: 28rem;
+        height: 24rem;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        width: 28rem;
+        height: 24rem;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        width: 35rem!Important;
+        height: 30rem;
+      }
+
 }
 
 img{
@@ -88,6 +126,36 @@ img{
     width: 32rem;
     align-self: center;
     transition: width 0.5s;
+
+    @media only screen and (min-width: 992px) {
+        width: 26rem;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        width: 26rem;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        width: 32rem;
+      }
+}
+
+&:hover img{
+    transform-origin: center;
+    transition: width 0.5s;
+    width: 45rem;
+
+    @media only screen and (min-width: 992px) {
+        width: 40rem;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        width: 40rem;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        width: 45rem;
+      }
 }
 
 span{
@@ -115,11 +183,9 @@ p{
     transition: top 0.5s;
 }
 
-&:hover img{
-    transform-origin: center;
-    transition: width 0.5s;
-    width: 45rem;
-}
+
+
+
 `
 
 const StyledModalWithBG = styled(Modal)`
@@ -204,15 +270,18 @@ const Categories = () => {
                 </CenteredCol>
             </FullWidthRowIntro>
             <FullWidthRowSpaceAround>
-                <ImageCol span={6} onClick={()=>showModal('FURNITURE')}>
+                <ImageCol 
+                onClick={()=>showModal('FURNITURE')}>
                     <Image preview={false} src={Furniture} />
                     <StyledSpan><HeadingP>FURNITURE</HeadingP></StyledSpan>
                 </ImageCol>
-                <ImageCol span={6} onClick={()=>showModal('LIGHTING')}>
+                <ImageCol 
+                onClick={()=>showModal('LIGHTING')}>
                     <Image preview={false} src={Lighting} />
                     <StyledSpan><HeadingP>LIGHTING</HeadingP></StyledSpan>
                 </ImageCol>
-                <ImageCol span={6} onClick={()=>showModal('ARTEFACTS')}>
+                <ImageCol 
+                onClick={()=>showModal('ARTEFACTS')}>
                     <Image preview={false} src={Artefacts} />
                     <StyledSpan><HeadingP>ARTEFACTS</HeadingP></StyledSpan>
                 </ImageCol>

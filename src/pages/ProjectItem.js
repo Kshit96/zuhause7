@@ -46,18 +46,6 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 
-&:before{
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 0;
-    border: 5px solid;
-    border-bottom: 1px;
-    width: 400px;
-    height: 1px;
-    top: 41.3%;
-}
-
 // &:before{
 //     display: block;
 //     position: relative;
@@ -116,7 +104,7 @@ flex-direction: column;
     transform-origin: center;
     width: 350px;
     height: 350px;
-    margin-top: -50px;
+    margin-top: -40px;
     border: 1px solid #0F121A;
     padding: 1rem;
 }
@@ -239,6 +227,7 @@ flex-direction: column;
     margin: -150px 0 150px 0;
     transition: margin 0.5s;
 }
+
 `
 
 const StyledP = styled.p`

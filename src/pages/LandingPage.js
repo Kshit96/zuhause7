@@ -29,6 +29,10 @@ color: #FCFEFB;
 font-size: 1.188rem;
 display: inline;
 
+@media only screen and (min-width: 992px) {
+  font-size: 1rem;
+}
+
 @media only screen and (min-width: 1200px) {
   font-size: 1rem;
 }
@@ -65,12 +69,17 @@ const LandingPage = () => {
   return (
     <StyledRowWithBG justify="center" align="middle">
       <FullWidthRow><CenteredCol
+        lg={{ span: 4 }}
+        xl={{ span: 4 }}
         xxl={{ span: 4 }}>
         <StyledLogo style={{ alignSelf: 'flex-end' }} />
       </CenteredCol>
         <FullWidthRow>
         </FullWidthRow>
-        <IntroductionCol xxl={{ span: 18 }}>
+        <IntroductionCol 
+        lg={{ span: 18 }}
+        xl={{ span: 18 }}
+        xxl={{ span: 18 }}>
           <br />
           <p>Zu•hau•se  / [tsuˈhauzə] /, meaning <BoldP>at home</BoldP>, is a dream put to implementation by <BoldP>Zahra Chadha.</BoldP>
             <br /><br />

@@ -24,18 +24,23 @@ display: flex;
 justify-content: center;
 align-items: center;
 align-content: center;
-overflow-y: visible;
-overflow-x: scroll;
-padding-left: 1400px;
-padding-right: 100px;
-height: 200px;
+overflow-x: auto;
+white-space: no-wrap;
+
+@media only screen and (min-width: 992px) {
+    height: 89%;
+   }
 
 @media only screen and (min-width: 1200px) {
     height: 89%;
+    padding-left: 1200px;
+    padding-top: 270px;
    }
    
    @media only screen and (min-width: 1600px) {
      height: 89%;
+     padding-left: 1000px;
+     padding-top: 0;
    }
 
 `
@@ -43,6 +48,11 @@ height: 200px;
 const HeadingCenteredCol = styled(CenteredCol)`
 flex-directoin: column;
 overflow-y: visible;
+
+@media only screen and (min-width: 992px) {
+    height: 21%;
+   }
+
 @media only screen and (min-width: 1200px) {
     height: 21%;
    }
