@@ -83,6 +83,7 @@ export const FullWidthRowIntro = styled(FullWidthRow)`
 export const FullWidthRowSpaceAround = styled(FullWidthRow)`
 justify-content: space-around;
 align-content: center;
+flex-direction: column;
 
 @media only screen and (min-width: 768px) {
     height: 60%;
