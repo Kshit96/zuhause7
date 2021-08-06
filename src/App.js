@@ -70,11 +70,25 @@ export const StyledModal = styled(Modal)`
 .ant-modal-close-x{
   color: #0F121A;
 }
-
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+
+  @media only screen and (min-width: 768) {
+  
+    width: 100%!important;
+    margin-top: -1%;
+  
+    .ant-modal-content{
+      height: 800px;
+      width: 75%!important;
+  }
+  .ant-modal-body{
+    height: 800px;
+    width: 100%!important;
+  }
+   }
 
   @media only screen and (min-width: 992) {
   

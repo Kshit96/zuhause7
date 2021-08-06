@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from '../images/ZuHause_Logo_Complete_Light.sv
 import BG from '../images/LandingPageBG.png';
 import { StyledRow, FullWidthRow } from './CommonStyledComponents';
 
-const StyledRowWithBG = styled(StyledRow)`
+const StyledRowWithBG = styled(Row)`
 background-image: url(${BG});
 background-size: cover;
 background-position: center;
@@ -15,7 +15,7 @@ align-items: center;
 justify-content: center;
 
 @media only screen and (min-width: 768px) {
-  height: 768px!important;
+  height: 768px;
   width: 100%;
 }
 

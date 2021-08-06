@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Divider } from 'antd';
+import { Row, Image, Divider } from 'antd';
 import BG from '../images/AboutBG.png';
 import { StyledRow } from './CommonStyledComponents';
 import styled from 'styled-components';
@@ -8,7 +8,7 @@ import { FullWidthRow } from './Categories';
 import { CenteredCol } from './LandingPage'
 
 
-const StyledRowWithBG = styled(StyledRow)`
+const StyledRowWithBG = styled(Row)`
 background-image: url(${BG});
 background-size: cover;
 width: 100%;
@@ -16,7 +16,7 @@ overflow: hidden;
 background-position: center;
 
 @media only screen and (min-width: 768px) {
-    height: 768px!important;
+    height: 768px;
     width: 100%;
   }
 
@@ -40,6 +40,10 @@ background-position: center;
 const HeadingCenteredCol = styled(CenteredCol)`
 flex-direction: column;
 
+@media only screen and (min-width: 768px) {
+    height: 45%;
+  }
+
 @media only screen and (min-width: 992px) {
     height: 45%;
    }
@@ -54,6 +58,10 @@ flex-direction: column;
 `
 
 const TextCenteredCol = styled(CenteredCol)`
+
+@media only screen and (min-width: 768px) {
+    height: 55%;
+  }
 
 @media only screen and (min-width: 992px) {
     height: 55%;
@@ -103,6 +111,12 @@ border-radius: 50%;
 object-fit: cover;
 object-position: center right;
 
+@media only screen and (min-width: 768px) {
+    width: 250px;
+    height: 250px;
+    margin-top: 17%;
+  }
+
 @media only screen and (min-width: 992px) {
     width: 250px;
     height: 250px;
@@ -139,6 +153,12 @@ min-width: 60%!Important;
     top: 0!important;
 }
 
+@media only screen and (min-width: 768px) {
+    font-size: 35px!important;
+    max-width: 80%!Important;
+    min-width: 80%!Important;
+  }
+
 @media only screen and (min-width: 992px) {
     font-size: 35px!important;
   }
@@ -161,7 +181,12 @@ const About = () => {
                 <StyledDivider>About Zahra Chadha</StyledDivider>
             </HeadingCenteredCol>
             <TextCenteredCol span={24}>
-                <AboutCol span={14}>
+                <AboutCol 
+                    md={{ span: 18 }}
+                    lg={{ span: 18 }}
+                    xl={{ span: 18 }}
+                    xxl={{ span: 18 }}
+                >
                     <br />
                     <p>Having done her diploma in interior designing, Zahra Chadha was sure she would be catering to product specialisation, sales and enhancing interior spaces. In 2000, when wooden floorings entered the Indian market, she worked with architects and designers alike for residential, corporate and commercial projects.
                         <br /><br />

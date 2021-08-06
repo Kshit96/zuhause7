@@ -24,6 +24,10 @@ display: inline;
 margin: 1rem 0 0 0;
 height: 5rem;
 
+@media only screen and (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+
 @media only screen and (min-width: 992px) {
     font-size: 1.2rem;
   }
@@ -45,8 +49,31 @@ margin:  0 0 0 0;
 
 const FormCol = styled(CenteredCol)`
 align-items: baseline;
-margin-top: -1rem;
+
+
+
+@media only screen and (min-width: 768px) {
+    margin-top: 0rem;
+  }
+
+@media only screen and (min-width: 992px) {
+    margin-top: -1rem;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    margin-top: -1rem;
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    margin-top: -1rem;
+  }
+
 label{
+
+    @media only screen and (min-width: 768px) {
+        font-size: 1rem;
+      }
+
     @media only screen and (min-width: 992px) {
         font-size: 1rem;
       }
@@ -102,6 +129,10 @@ overflow: hidden;
     font-size: 1.3rem;
     align-self: center;
     margin-right: 0rem;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 1.25rem;
+      }
 
     @media only screen and (min-width: 992px) {
         font-size: 1.25rem;

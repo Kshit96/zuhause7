@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import { Image, Modal } from 'antd';
+import { Row, Image, Modal } from 'antd';
 import BG from '../images/CategoriesBG.png';
 import { CenteredCol, IntroductionCol, BoldP } from './LandingPage';
 import styled from 'styled-components';
@@ -33,14 +33,14 @@ function getWindowDimensions() {
     return windowDimensions;
   }
 
-const StyledRowWithBG = styled(StyledRow)`
+const StyledRowWithBG = styled(Row)`
 background-image: url(${BG});
 background-size: cover;
 align-content: center;
 background-position: center;
 
 @media only screen and (min-width: 768px) {
-    height: 768px!important;
+    height: 768px;
     width: 100%;
   }
 
@@ -86,7 +86,7 @@ align-content: center;
 
 @media only screen and (min-width: 768px) {
     height: 60%;
-    display: block;
+    overflow-x: scroll;
   }
 
 @media only screen and (min-width: 992px) {
@@ -136,7 +136,7 @@ transition: height 0.5s, width 0.5s;
 }
 
 @media only screen and (min-width: 768px) {
-    margin: 2rem auto;
+    margin: 0 4rem;
     width: 24rem;
     height: 20rem;
   }

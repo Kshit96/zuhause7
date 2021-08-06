@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col } from 'antd';
+import { Row, Col } from 'antd';
 import BG from '../images/ProjectsBG.png';
 import { StyledRow } from './CommonStyledComponents';
 import styled from 'styled-components';
@@ -8,7 +8,7 @@ import { StyledDivider } from './About';
 import ProjectItem from './ProjectItem';
 
 
-const StyledRowWithBG = styled(StyledRow)`
+const StyledRowWithBG = styled(Row)`
 background-image: url(${BG});
 background-size: cover;
 width: 100%;
@@ -20,7 +20,7 @@ margin-bottom: 80px;
 background-position: center;
 
 @media only screen and (min-width: 768px) {
-    height: 768px!important;
+    height: 768px;
     width: 100%;
   }
 
