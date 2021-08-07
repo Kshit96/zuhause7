@@ -1,12 +1,195 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import BG from '../images/ProjectsBG.png';
-import { StyledRow } from './CommonStyledComponents';
 import styled from 'styled-components';
 import { CenteredCol } from './LandingPage'
 import { StyledDivider } from './About';
 import ProjectItem from './ProjectItem';
+import Slider from "react-slick";
 
+export const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    adaptiveHeight: true,
+    responsive: [
+        {
+            breakpoint: 1600,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true,
+                arrows: true,
+            }
+        },
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                arrows: true,
+            }
+        },
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                arrows: true,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                initialSlide: 1,
+                dots: true,
+            }
+        }
+    ]
+};
+
+export const StyledSlider = styled(Slider)`
+width: 100%;
+height: 100%;
+display: flex;
+align-items: flex-end;
+
+.slick-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+}
+
+.slick-next{
+
+    @media only screen and (min-width: 992px) {
+        right: 2rem;
+        text-shadow: 0 0 5px black;
+    color: black;
+    z-index: 5;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        right: 2rem;
+        text-shadow: 0 0 5px black;
+    color: black;
+    z-index: 5;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        right: 2rem;
+        text-shadow: 0 0 5px black;
+    color: black;
+    z-index: 5;
+      }
+}
+
+.slick-prev{
+
+
+    @media only screen and (min-width: 992px) {
+        left: 1rem;
+        color: black;
+    text-shadow: 0 0 5px black;
+    z-index: 5;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        left: 1rem;
+        color: black;
+    text-shadow: 0 0 5px black;
+    z-index: 5;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        left: 2rem;
+        color: black;
+    text-shadow: 0 0 5px black;
+    z-index: 5;
+      }
+}
+
+.slick-track{
+
+    display: flex;
+    align-items: center;
+    @media only screen and (max-width: 600px) {
+        height: 100%;
+        margin-top: 11rem;
+      }
+      
+      @media only screen and (min-width: 600px) {
+        height: 100%;
+        margin-top: 11rem;
+      }
+
+      @media only screen and (min-width: 768px) {
+        height: 100%;
+        margin-top: 11rem;
+      }
+
+    @media only screen and (min-width: 992px) {
+        height: 100%;
+        margin-top: 3rem;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        height: 100%;
+        margin-top: 3rem;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        margin-top: 3rem;
+        height: 100%
+      }
+}
+
+.slick-list{
+
+    overflow-x: clip;
+    overflow-y: visible;
+
+    @media only screen and (max-width: 600px) {
+        height: 90%!important;
+      }
+      
+      @media only screen and (min-width: 600px) {
+        height: 90%!important;
+      }
+
+      @media only screen and (min-width: 768px) {
+        height: 90%!important;
+      }
+      
+    @media only screen and (min-width: 992px) {
+        height: 90%!important;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        height: 90%!important;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        height: 90%!important;
+      }
+}
+
+`
 
 const StyledRowWithBG = styled(Row)`
 background-image: url(${BG});
@@ -55,23 +238,34 @@ display: flex;
 justify-content: center;
 align-items: center;
 align-content: center;
-overflow-x: auto;
+overflow-x: clip;
+overflow-y: visible;
 white-space: no-wrap;
 
-@media only screen and (min-width: 992px) {
-    height: 89%;
-   }
 
-@media only screen and (min-width: 1200px) {
-    height: 89%;
-    padding-left: 1200px;
-    padding-top: 270px;
+@media only screen and (max-width: 600px) {
+    margin-top: -10rem; 
+    height: 90%;
+  }
+  @media only screen and (min-width: 600px) {
+    margin-top: -10rem; 
+    height: 90%;
+  }
+@media only screen and (min-width: 768px) {
+    margin-top: -10rem; 
+    height: 90%;
+  }
+@media only screen and (min-width: 992px) {
+    margin-top: -10rem; 
+    height: 90%;
    }
-   
+@media only screen and (min-width: 1200px) {
+    margin-top: 5rem; 
+    height: 90%;
+   }
    @media only screen and (min-width: 1600px) {
-     height: 89%;
-     padding-left: 1000px;
-     padding-top: 0;
+    margin-top: -10rem; 
+    height: 90%;
    }
 
 `
@@ -81,26 +275,26 @@ flex-direction: column;
 overflow-y: visible;
 
 @media only screen and (max-width: 600px) {
-    height: 21%;
+    height: 10%;
   }
   @media only screen and (min-width: 600px) {
-    height: 21%;
+    height: 10%;
   }
 
 @media only screen and (min-width: 768px) {
-    height: 21%;
+    height: 10%;
   }
 
 @media only screen and (min-width: 992px) {
-    height: 21%;
+    height: 10%;
    }
 
 @media only screen and (min-width: 1200px) {
-    height: 21%;
+    height: 10%;
    }
    
    @media only screen and (min-width: 1600px) {
-     height: 21%;
+    height: 10%;
    }
 `
 
@@ -200,7 +394,9 @@ const Projects = () => {
                 <StyledDivider>Projects</StyledDivider>
             </HeadingCenteredCol>
             <ProjectItemCol span={20}>
-                {ProjectData.map((data) => { return <ProjectItem data={data} /> })}
+                <StyledSlider {...settings}>
+                    {ProjectData.map((data) => { return <ProjectItem data={data} /> })}
+                </StyledSlider>
             </ProjectItemCol>
         </StyledRowWithBG>
     );

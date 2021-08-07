@@ -11,7 +11,7 @@ import ProductGallery from './ProductGallery';
 import { StyledRow, FullWidthRow } from './CommonStyledComponents';
 import Slider from "react-slick";
 
-const settings = {
+export const settings = {
     dots: true,
     infinite: true,
     speed: 500,
