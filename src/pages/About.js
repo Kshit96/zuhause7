@@ -237,8 +237,8 @@ const About = () => {
             </HeadingCenteredCol>
             <TextCenteredCol span={24}>
                 <AboutCol 
-                    xs={{ span: 19 }}
-                    sm={{ span: 19 }}
+                    xs={{ span: 20 }}
+                    sm={{ span: 20 }}
                     md={{ span: 18 }}
                     lg={{ span: 18 }}
                     xl={{ span: 18 }}
@@ -252,8 +252,7 @@ const About = () => {
                         The curiosity for learning took has taken her to many exhibitions making furniture and artefacts another area of interest.
                         <br /><br />
                         <i style={{ fontWeight: '600' }}>“The culmination of any project is when the clients finally see the end result of the journey where you handhold them, help select a good product, procure it, and handle the logistics. It is a very emotional experience, and it is all handled by Zuhause7.”</i>
-                        <br /><br />
-                        <BoldP><i>-Zahra Chadha</i></BoldP>
+                        <BoldP><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Zahra Chadha</i></BoldP>
                         <br />
                     </p>
                 </AboutCol>

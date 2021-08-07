@@ -440,25 +440,115 @@ span{
     transition: top 0.5s;
     z-index:3;
     position: relative!Important;
-    top: 500px;
-    width: 100%;
+    width: auto;
     text-align: center;
+    @media only screen and (max-width: 600px) {
+        top: -200px;
+      }
+      
+      @media only screen and (min-width: 600px) {
+        top: -200px;
+      }
+    
+    @media only screen and (min-width: 768px) {
+        top: -120px;
+      }
+
+    @media only screen and (min-width: 992px) {
+        top: 500px;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        top: 500px;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        top: 500px;
+      }
 }
 
 p{
-    margin-left: 0rem;
     transition: margin-left 0.5s ease-in-out;
+    background: rgba(15, 18, 26, 0.9);
+    @media only screen and (max-width: 600px) {
+        margin-left: -6rem;
+      }
+      
+      @media only screen and (min-width: 600px) {
+        margin-left: -6rem;
+      }
+    
+    @media only screen and (min-width: 768px) {
+        margin-left: -10rem;
+      }
+
+    @media only screen and (min-width: 992px) {
+        margin-left: 0rem;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        margin-left: 0rem;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        margin-left: 0rem;
+      }
 }
 
 &:hover p{
     transition: margin-left 1s ease-in-out;
-    margin-left: -20rem;
+    
+    @media only screen and (max-width: 600px) {
+        margin-left: -15rem;
+      }
+      
+      @media only screen and (min-width: 600px) {
+        margin-left: -15rem;
+      }
+    
+    @media only screen and (min-width: 768px) {
+        margin-left: -10rem;
+      }
+
+    @media only screen and (min-width: 992px) {
+        margin-left: -10rem;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        margin-left: -10rem;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        margin-left: -15rem;
+      }
 }
 
 &:hover span{
     position: relative;
-    top: 215px;
     transition: top 0.5s;
+    @media only screen and (max-width: 600px) {
+        top: -180px;
+      }
+      
+      @media only screen and (min-width: 600px) {
+        top: -180px;
+      }
+    
+    @media only screen and (min-width: 768px) {
+        top: -120px;
+      }
+
+    @media only screen and (min-width: 992px) {
+        top: -120px;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        top: -120px;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        top: -170px;
+      }
 }
 
 `
@@ -589,17 +679,20 @@ const Categories = () => {
             <FullWidthRowSpaceAround>
                 <StyledSlider {...settings} >
                     <ImageCol
-                        onClick={() => showModal('FURNITURE')}>
+                        onClick={() => showModal('FURNITURE')}
+                        >
                         <Image preview={false} src={Furniture} />
                         <StyledSpan><HeadingP>FURNITURE</HeadingP></StyledSpan>
                     </ImageCol>
                     <ImageCol
-                        onClick={() => showModal('LIGHTING')}>
+                        onClick={() => showModal('LIGHTING')}
+                        >
                         <Image preview={false} src={Lighting} />
                         <StyledSpan><HeadingP>LIGHTING</HeadingP></StyledSpan>
                     </ImageCol>
                     <ImageCol
-                        onClick={() => showModal('ARTEFACTS')}>
+                        onClick={() => showModal('ARTEFACTS')}
+                        >
                         <Image preview={false} src={Artefacts} />
                         <StyledSpan><HeadingP>ARTEFACTS</HeadingP></StyledSpan>
                     </ImageCol>
