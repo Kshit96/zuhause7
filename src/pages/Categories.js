@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Image, Modal } from 'antd';
 import BG from '../images/CategoriesBG.png';
 import { CenteredCol, IntroductionCol, BoldP } from './LandingPage';
@@ -9,29 +9,157 @@ import Artefacts from '../images/Artefacts.jpeg';
 import { LIGHTING, FURNITURE, ARTEFACTS } from '../data/CatalogueImages';
 import ProductGallery from './ProductGallery';
 import { StyledRow, FullWidthRow } from './CommonStyledComponents';
+import Slider from "react-slick";
+
+const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    adaptiveHeight: true,
+    responsive: [
+        {
+          breakpoint: 1600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3
+          }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: true,
+              arrows: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              initialSlide: 1,
+              arrows: true
+            }
+          }
+      ]
+};
+
+export const StyledSlider = styled(Slider)`
+width: 100%;
+
+.slick-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slick-next{
+    right: 2rem;
+    z-index: 5;
+}
+
+.slick-prev{
+    left: 2rem;
+    z-index: 5;
+}
+
+.slick-track{
+
+    @media only screen and (max-width: 600px) {
+        height: 28rem!important;
+      }
+      
+      @media only screen and (min-width: 600px) {
+        height: 28rem!important;;
+      }
+
+      @media only screen and (min-width: 768px) {
+        height: 28rem!important;;
+      }
+
+    @media only screen and (min-width: 992px) {
+        height: 28rem!important;;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        height: 28rem!important;;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        height: 35rem!important;;
+      }
+}
+
+.slick-list{
+    @media only screen and (max-width: 600px) {
+        height: 28rem!important;
+      }
+      
+      @media only screen and (min-width: 600px) {
+        height: 28rem!important;;
+      }
+
+      @media only screen and (min-width: 768px) {
+        height: 28rem!important;;
+      }
+      
+    @media only screen and (min-width: 992px) {
+        height: 28rem!important;;
+      }
+    
+    @media only screen and (min-width: 1200px) {
+        height: 28rem!important;;
+      }
+      
+      @media only screen and (min-width: 1600px) {
+        height: 35rem!important;;
+      }
+}
+
+`
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
     return {
-      width,
-      height
+        width,
+        height
     };
-  }
-  
-  export function useWindowDimensions() {
+}
+
+export function useWindowDimensions() {
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-  
+
     useEffect(() => {
-      function handleResize() {
-        setWindowDimensions(getWindowDimensions());
-      }
-  
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
+        function handleResize() {
+            setWindowDimensions(getWindowDimensions());
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
-  
+
     return windowDimensions;
-  }
+}
 
 const StyledRowWithBG = styled(Row)`
 background-image: url(${BG});
@@ -72,8 +200,6 @@ background-position: center;
 `
 
 export const FullWidthRowIntro = styled(FullWidthRow)`
-
-
 @media only screen and (max-width: 600px) {
     height: 30%;
   }
@@ -100,10 +226,7 @@ export const FullWidthRowIntro = styled(FullWidthRow)`
 `
 
 export const FullWidthRowSpaceAround = styled(FullWidthRow)`
-justify-content: space-around;
-align-content: center;
-flex-direction: column;
-
+display: flex;
 @media only screen and (max-width: 600px) {
     height: 60%;
   }
@@ -181,135 +304,135 @@ position: relative;
 align-items: center;
 justify-content: center;
 border-radius: 1rem;
-transform-origin: center;
-transition: height 0.5s, width 0.5s;
+transform-origin: center center;
+transition: height 0.5s, width 0.5s, transform 0.5s;
 .ant-image{
-    position: absolute!important;
+    position: relative;
 }
 
 
 @media only screen and (max-width: 600px) {
-    width: 24rem;
-    height: 20rem;
+    width: 18rem!important;
+    height: 15rem;
   }
   
   @media only screen and (min-width: 600px) {
-    width: 24rem;
-    height: 20rem;
+    width: 18rem!important;
+    height: 15rem;
   }
 
 @media only screen and (min-width: 768px) {
     margin: 0 4rem;
-    width: 24rem;
+    width: 24rem!important;
     height: 20rem;
   }
 
 @media only screen and (min-width: 992px) {
-    width: 24rem;
+    width: 24rem!important;
     height: 20rem;
   }
 
 @media only screen and (min-width: 1200px) {
-    width: 24rem;
+    width: 24rem!important;
     height: 20rem;
   }
   
   @media only screen and (min-width: 1600px) {
-    width: 30rem;
+    width: 30rem!important;
     height: 25rem;
   }
 
 &:hover{
-    transition: height 0.5s, width 0.5s;
-    transform-origin: center;
+    transition: height 0.5s, width 0.5s, transform 0.5s;
+    transform-origin: center center;
     
     cursor: pointer;
     
     @media only screen and (max-width: 600px) {
-        width: 28rem;
-        height: 24rem;
+        transform: scale(1.2,1.2)
       }
       
       @media only screen and (min-width: 600px) {
-        width: 28rem;
-        height: 24rem;
+        transform: scale(1.2,1.2)
+      }
+
+      @media only screen and (min-width: 768px) {
+        transform: scale(1.2,1.2)
       }
 
     @media only screen and (min-width: 992px) {
-        width: 28rem;
-        height: 24rem;
+        transform: scale(1.2,1.2)
       }
     
     @media only screen and (min-width: 1200px) {
-        width: 28rem;
-        height: 24rem;
+        transform: scale(1.2,1.2)
       }
       
       @media only screen and (min-width: 1600px) {
-        width: 35rem!Important;
-        height: 30rem;
+        transform: scale(1.2,1.2)
       }
 
 }
 
 img{
-    transform-origin: center;
+    transform-origin: center center;
+    margin-top: -8rem;
     width: 32rem;
     align-self: center;
-    transition: width 0.5s;
+    transition: transform 0.5s, width 0.5s;
 
     @media only screen and (max-width: 600px) {
-        width: 26rem;
+        width: 24rem;
       }
       
       @media only screen and (min-width: 600px) {
-        width: 26rem;
+        width: 24rem;
       }
     
     @media only screen and (min-width: 768px) {
-        width: 26rem;
+        width: 24rem;
       }
 
     @media only screen and (min-width: 992px) {
-        width: 26rem;
+        width: 24rem;
       }
     
     @media only screen and (min-width: 1200px) {
-        width: 26rem;
+        width: 24rem;
       }
       
       @media only screen and (min-width: 1600px) {
-        width: 32rem;
+        width: 30rem;
       }
 }
 
 &:hover img{
-    transform-origin: center;
-    transition: width 0.5s;
-    width: 45rem;
+    transform-origin: center center;
+    transition: transform 0.5s, width 0.5s;
+    transform: scale(1.5,1.5)
 
     @media only screen and (max-width: 600px) {
-        width: 40rem;
+        transform: scale(1.2,1.2)
       }
       
       @media only screen and (min-width: 600px) {
-        width: 40rem;
+        transform: scale(1.2,1.2)
       }
     
     @media only screen and (min-width: 768px) {
-        width: 40rem;
+        transform: scale(1.2,1.2)
       }
 
     @media only screen and (min-width: 992px) {
-        width: 40rem;
+        transform: scale(1.2,1.2)
       }
     
     @media only screen and (min-width: 1200px) {
-        width: 40rem;
+        transform: scale(1.2,1.2)
       }
       
       @media only screen and (min-width: 1600px) {
-        width: 45rem;
+        transform: scale(1.2,1.2)
       }
 }
 
@@ -367,97 +490,95 @@ const Categories = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const { height, width } = useWindowDimensions();
 
-    console.log(height, width);
-
     const handleCancel = () => {
         setIsModalVisible(false);
-      };
+    };
 
-    useEffect(()=>{
-        const hr= document.querySelector('.styled-hr');
+    useEffect(() => {
+        const hr = document.querySelector('.styled-hr');
 
         hr.classList.remove('styled-hr-animate');
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-              if (entry.isIntersecting && entry.target.className.includes('styled-hr')) {
-                hr.classList.add('styled-hr-animate');
-                return;
-              }
+                if (entry.isIntersecting && entry.target.className.includes('styled-hr')) {
+                    hr.classList.add('styled-hr-animate');
+                    return;
+                }
 
-              if (entry.isIntersecting && entry.target.className.includes('fade-in-wrapper')) {
-                entry.target.classList.add('fade-in-wrapper-animate');
-                return;
-              }
+                if (entry.isIntersecting && entry.target.className.includes('fade-in-wrapper')) {
+                    entry.target.classList.add('fade-in-wrapper-animate');
+                    return;
+                }
 
-              entry.target.classList.remove('styled-hr-animate');
-              entry.target.classList.remove('fade-in-wrapper-animate');
+                entry.target.classList.remove('styled-hr-animate');
+                entry.target.classList.remove('fade-in-wrapper-animate');
             });
-          }, {rootMargin: "0px 0px -300px 0px"});
-          observer.observe(document.querySelector('.styled-hr'));
-          observer.observe(document.querySelector('.fade-in-wrapper'));
-    },[])
+        }, { rootMargin: "0px 0px -300px 0px" });
+        observer.observe(document.querySelector('.styled-hr'));
+        observer.observe(document.querySelector('.fade-in-wrapper'));
+    }, [])
 
-    let imageWidth= '720px';
-    let imageHeight= '720px';
+    let imageWidth = '720px';
+    let imageHeight = '720px';
 
     const showModal = category => {
 
-        if(width>= 1600){
-            imageHeight= '720px';
-            imageWidth= '720px';
+        if (width >= 1600) {
+            imageHeight = '720px';
+            imageWidth = '720px';
         }
-        else if(width>=1200){
-            imageHeight= '480px';
-            imageWidth= '480px';
+        else if (width >= 1200) {
+            imageHeight = '480px';
+            imageWidth = '480px';
         }
-        else if(width>=992){
-            imageHeight= '480px';
-            imageWidth= '480px';
+        else if (width >= 992) {
+            imageHeight = '480px';
+            imageWidth = '480px';
         }
-        else if(width>=768){
-            imageHeight= '480px';
-            imageWidth= '480px';
+        else if (width >= 768) {
+            imageHeight = '480px';
+            imageWidth = '480px';
         }
-        else if(width>=600){
-            imageHeight= '360px';
-            imageWidth= '480px';
+        else if (width >= 600) {
+            imageHeight = '360px';
+            imageWidth = '480px';
         }
-        else if(width<600){
-            imageHeight= '360px';
-            imageWidth= '480px';
+        else if (width < 600) {
+            imageHeight = '360px';
+            imageWidth = '480px';
         }
 
 
-        if(category === 'FURNITURE'){
-            setImages(()=>FURNITURE({imageHeight, imageWidth}));
+        if (category === 'FURNITURE') {
+            setImages(() => FURNITURE({ imageHeight, imageWidth }));
         }
-        else if(category === 'LIGHTING'){
-            setImages(()=>LIGHTING(({imageHeight, imageWidth})));
+        else if (category === 'LIGHTING') {
+            setImages(() => LIGHTING(({ imageHeight, imageWidth })));
         }
-        else{
-            setImages(()=>ARTEFACTS(({imageHeight, imageWidth})));
+        else {
+            setImages(() => ARTEFACTS(({ imageHeight, imageWidth })));
         }
         setIsModalVisible(true);
     }
 
     return (
         <StyledRowWithBG>
-            <StyledModalWithBG visible={isModalVisible} footer={null}  onCancel={handleCancel}>
-                <ProductGallery images={images}/>
+            <StyledModalWithBG visible={isModalVisible} footer={null} onCancel={handleCancel}>
+                <ProductGallery images={images} />
             </StyledModalWithBG>
             <FullWidthRowIntro>
                 <CenteredCol style={{ flexDirection: 'column' }} span={24}>
                     <HeadingP className={'fade-in-wrapper fade-in-wrapper-animate'}>Explore Now</HeadingP>
-                    <StyledHR className={'hr-wrapper'}><hr className={'styled-hr styled-hr-animate'}/></StyledHR>
+                    <StyledHR className={'hr-wrapper'}><hr className={'styled-hr styled-hr-animate'} /></StyledHR>
                     <IntroductionCol
-                    xs={{ span: 18 }}
-                    sm={{ span: 18 }}
-                    md={{ span: 22 }} 
-                    lg={{ span: 18 }}
-                    xl={{ span: 18 }}
-                    xxl={{ span: 18 }}
-                    style={{ marginTop: '2rem' }}>
+                        xs={{ span: 18 }}
+                        sm={{ span: 18 }}
+                        md={{ span: 22 }}
+                        lg={{ span: 18 }}
+                        xl={{ span: 18 }}
+                        xxl={{ span: 18 }}
+                        style={{ marginTop: '2rem' }}>
                         Residential Projects. Commercial Spaces. Show flats. Clinics.<br />
                         We can retrofit your space no matter what segment it belongs to.<br />
                         Explore through our range of products that we can help you source and make
@@ -466,21 +587,23 @@ const Categories = () => {
                 </CenteredCol>
             </FullWidthRowIntro>
             <FullWidthRowSpaceAround>
-                <ImageCol 
-                onClick={()=>showModal('FURNITURE')}>
-                    <Image preview={false} src={Furniture} />
-                    <StyledSpan><HeadingP>FURNITURE</HeadingP></StyledSpan>
-                </ImageCol>
-                <ImageCol 
-                onClick={()=>showModal('LIGHTING')}>
-                    <Image preview={false} src={Lighting} />
-                    <StyledSpan><HeadingP>LIGHTING</HeadingP></StyledSpan>
-                </ImageCol>
-                <ImageCol 
-                onClick={()=>showModal('ARTEFACTS')}>
-                    <Image preview={false} src={Artefacts} />
-                    <StyledSpan><HeadingP>ARTEFACTS</HeadingP></StyledSpan>
-                </ImageCol>
+                <StyledSlider {...settings} >
+                    <ImageCol
+                        onClick={() => showModal('FURNITURE')}>
+                        <Image preview={false} src={Furniture} />
+                        <StyledSpan><HeadingP>FURNITURE</HeadingP></StyledSpan>
+                    </ImageCol>
+                    <ImageCol
+                        onClick={() => showModal('LIGHTING')}>
+                        <Image preview={false} src={Lighting} />
+                        <StyledSpan><HeadingP>LIGHTING</HeadingP></StyledSpan>
+                    </ImageCol>
+                    <ImageCol
+                        onClick={() => showModal('ARTEFACTS')}>
+                        <Image preview={false} src={Artefacts} />
+                        <StyledSpan><HeadingP>ARTEFACTS</HeadingP></StyledSpan>
+                    </ImageCol>
+                </StyledSlider>
             </FullWidthRowSpaceAround>
         </StyledRowWithBG>
     );
