@@ -12,56 +12,56 @@ import { StyledRow, FullWidthRow } from './CommonStyledComponents';
 import Slider from "react-slick";
 
 export const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    adaptiveHeight: true,
-    responsive: [
-        {
-          breakpoint: 1600,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 1200,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-          }
-        },
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3
-          }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true,
-              arrows: true
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              initialSlide: 1,
-              arrows: true
-            }
-          }
-      ]
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 1600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+        arrows: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        arrows: true
+      }
+    }
+  ]
 };
 
 export const StyledSlider = styled(Slider)`
@@ -69,6 +69,7 @@ width: 100%;
 
 .slick-slide{
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -84,7 +85,8 @@ width: 100%;
 }
 
 .slick-track{
-
+  display: flex;
+  flex-direction: row;
     @media only screen and (max-width: 600px) {
         height: 28rem!important;
       }
@@ -139,26 +141,26 @@ width: 100%;
 `
 
 function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-        width,
-        height
-    };
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
 }
 
 export function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
-    useEffect(() => {
-        function handleResize() {
-            setWindowDimensions(getWindowDimensions());
-        }
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-    return windowDimensions;
+  return windowDimensions;
 }
 
 const StyledRowWithBG = styled(Row)`
@@ -576,130 +578,130 @@ background: rgba(15, 18, 26, 0.9);
 
 const Categories = () => {
 
-    const [images, setImages] = useState([]);
-    const [isModalVisible, setIsModalVisible] = useState(false);
-    const { height, width } = useWindowDimensions();
+  const [images, setImages] = useState([]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const { height, width } = useWindowDimensions();
 
-    const handleCancel = () => {
-        setIsModalVisible(false);
-    };
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
 
-    useEffect(() => {
-        const hr = document.querySelector('.styled-hr');
+  useEffect(() => {
+    const hr = document.querySelector('.styled-hr');
 
-        hr.classList.remove('styled-hr-animate');
+    hr.classList.remove('styled-hr-animate');
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && entry.target.className.includes('styled-hr')) {
-                    hr.classList.add('styled-hr-animate');
-                    return;
-                }
-
-                if (entry.isIntersecting && entry.target.className.includes('fade-in-wrapper')) {
-                    entry.target.classList.add('fade-in-wrapper-animate');
-                    return;
-                }
-
-                entry.target.classList.remove('styled-hr-animate');
-                entry.target.classList.remove('fade-in-wrapper-animate');
-            });
-        }, { rootMargin: "0px 0px -300px 0px" });
-        observer.observe(document.querySelector('.styled-hr'));
-        observer.observe(document.querySelector('.fade-in-wrapper'));
-    }, [])
-
-    let imageWidth = '720px';
-    let imageHeight = '720px';
-
-    const showModal = category => {
-
-        if (width >= 1600) {
-            imageHeight = '720px';
-            imageWidth = '720px';
-        }
-        else if (width >= 1200) {
-            imageHeight = '480px';
-            imageWidth = '480px';
-        }
-        else if (width >= 992) {
-            imageHeight = '480px';
-            imageWidth = '480px';
-        }
-        else if (width >= 768) {
-            imageHeight = '480px';
-            imageWidth = '480px';
-        }
-        else if (width >= 600) {
-            imageHeight = '360px';
-            imageWidth = '480px';
-        }
-        else if (width < 600) {
-            imageHeight = '360px';
-            imageWidth = '480px';
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.target.className.includes('styled-hr')) {
+          hr.classList.add('styled-hr-animate');
+          return;
         }
 
+        if (entry.isIntersecting && entry.target.className.includes('fade-in-wrapper')) {
+          entry.target.classList.add('fade-in-wrapper-animate');
+          return;
+        }
 
-        if (category === 'FURNITURE') {
-            setImages(() => FURNITURE({ imageHeight, imageWidth }));
-        }
-        else if (category === 'LIGHTING') {
-            setImages(() => LIGHTING(({ imageHeight, imageWidth })));
-        }
-        else {
-            setImages(() => ARTEFACTS(({ imageHeight, imageWidth })));
-        }
-        setIsModalVisible(true);
+        entry.target.classList.remove('styled-hr-animate');
+        entry.target.classList.remove('fade-in-wrapper-animate');
+      });
+    }, { rootMargin: "0px 0px -300px 0px" });
+    observer.observe(document.querySelector('.styled-hr'));
+    observer.observe(document.querySelector('.fade-in-wrapper'));
+  }, [])
+
+  let imageWidth = '720px';
+  let imageHeight = '720px';
+
+  const showModal = category => {
+
+    if (width >= 1600) {
+      imageHeight = '720px';
+      imageWidth = '720px';
+    }
+    else if (width >= 1200) {
+      imageHeight = '480px';
+      imageWidth = '480px';
+    }
+    else if (width >= 992) {
+      imageHeight = '480px';
+      imageWidth = '480px';
+    }
+    else if (width >= 768) {
+      imageHeight = '480px';
+      imageWidth = '480px';
+    }
+    else if (width >= 600) {
+      imageHeight = '360px';
+      imageWidth = '480px';
+    }
+    else if (width < 600) {
+      imageHeight = '360px';
+      imageWidth = '480px';
     }
 
-    return (
-        <StyledRowWithBG>
-            <StyledModalWithBG visible={isModalVisible} footer={null} onCancel={handleCancel}>
-                <ProductGallery images={images} />
-            </StyledModalWithBG>
-            <FullWidthRowIntro>
-                <CenteredCol style={{ flexDirection: 'column' }} span={24}>
-                    <HeadingP className={'fade-in-wrapper fade-in-wrapper-animate'}>Explore Now</HeadingP>
-                    <StyledHR className={'hr-wrapper'}><hr className={'styled-hr styled-hr-animate'} /></StyledHR>
-                    <IntroductionCol
-                        xs={{ span: 18 }}
-                        sm={{ span: 18 }}
-                        md={{ span: 22 }}
-                        lg={{ span: 18 }}
-                        xl={{ span: 18 }}
-                        xxl={{ span: 18 }}
-                        style={{ marginTop: '2rem' }}>
-                        Residential Projects. Commercial Spaces. Show flats. Clinics.<br />
-                        We can retrofit your space no matter what segment it belongs to.<br />
-                        Explore through our range of products that we can help you source and make
-                        all your interior spaces feel <BoldP>at home.</BoldP>
-                    </IntroductionCol>
-                </CenteredCol>
-            </FullWidthRowIntro>
-            <FullWidthRowSpaceAround>
-                <StyledSlider {...settings} >
-                    <ImageCol
-                        onClick={() => showModal('FURNITURE')}
-                        >
-                        <Image preview={false} src={Furniture} />
-                        <StyledSpan><HeadingP>FURNITURE</HeadingP></StyledSpan>
-                    </ImageCol>
-                    <ImageCol
-                        onClick={() => showModal('LIGHTING')}
-                        >
-                        <Image preview={false} src={Lighting} />
-                        <StyledSpan><HeadingP>LIGHTING</HeadingP></StyledSpan>
-                    </ImageCol>
-                    <ImageCol
-                        onClick={() => showModal('ARTEFACTS')}
-                        >
-                        <Image preview={false} src={Artefacts} />
-                        <StyledSpan><HeadingP>ARTEFACTS</HeadingP></StyledSpan>
-                    </ImageCol>
-                </StyledSlider>
-            </FullWidthRowSpaceAround>
-        </StyledRowWithBG>
-    );
+
+    if (category === 'FURNITURE') {
+      setImages(() => FURNITURE({ imageHeight, imageWidth }));
+    }
+    else if (category === 'LIGHTING') {
+      setImages(() => LIGHTING(({ imageHeight, imageWidth })));
+    }
+    else {
+      setImages(() => ARTEFACTS(({ imageHeight, imageWidth })));
+    }
+    setIsModalVisible(true);
+  }
+
+  return (
+    <StyledRowWithBG>
+      <StyledModalWithBG visible={isModalVisible} footer={null} onCancel={handleCancel}>
+        <ProductGallery images={images} />
+      </StyledModalWithBG>
+      <FullWidthRowIntro>
+        <CenteredCol style={{ flexDirection: 'column' }} span={24}>
+          <HeadingP className={'fade-in-wrapper fade-in-wrapper-animate'}>Explore Now</HeadingP>
+          <StyledHR className={'hr-wrapper'}><hr className={'styled-hr styled-hr-animate'} /></StyledHR>
+          <IntroductionCol
+            xs={{ span: 18 }}
+            sm={{ span: 18 }}
+            md={{ span: 22 }}
+            lg={{ span: 18 }}
+            xl={{ span: 18 }}
+            xxl={{ span: 18 }}
+            style={{ marginTop: '2rem' }}>
+            Residential Projects. Commercial Spaces. Show flats. Clinics.<br />
+            We can retrofit your space no matter what segment it belongs to.<br />
+            Explore through our range of products that we can help you source and make
+            all your interior spaces feel <BoldP>at home.</BoldP>
+          </IntroductionCol>
+        </CenteredCol>
+      </FullWidthRowIntro>
+      <FullWidthRowSpaceAround>
+        <StyledSlider {...settings} >
+          <ImageCol
+            onClick={() => showModal('FURNITURE')}
+          >
+            <Image preview={false} src={Furniture} />
+            <StyledSpan><HeadingP>FURNITURE</HeadingP></StyledSpan>
+          </ImageCol>
+          <ImageCol
+            onClick={() => showModal('LIGHTING')}
+          >
+            <Image preview={false} src={Lighting} />
+            <StyledSpan><HeadingP>LIGHTING</HeadingP></StyledSpan>
+          </ImageCol>
+          <ImageCol
+            onClick={() => showModal('ARTEFACTS')}
+          >
+            <Image preview={false} src={Artefacts} />
+            <StyledSpan><HeadingP>ARTEFACTS</HeadingP></StyledSpan>
+          </ImageCol>
+        </StyledSlider>
+      </FullWidthRowSpaceAround>
+    </StyledRowWithBG>
+  );
 }
 
 export default Categories;

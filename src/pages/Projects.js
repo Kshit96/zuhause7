@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import BG from '../images/ProjectsBG.png';
+import BG from '../images/CategoriesBG.png';
 import styled from 'styled-components';
 import { CenteredCol } from './LandingPage'
 import { StyledDivider } from './About';
@@ -8,58 +8,60 @@ import ProjectItem from './ProjectItem';
 import Slider from "react-slick";
 
 export const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    adaptiveHeight: true,
-    responsive: [
-        {
-            breakpoint: 1600,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true,
-                arrows: true,
-            }
-        },
-        {
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                arrows: true,
-            }
-        },
-        {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                arrows: true,
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                initialSlide: 1,
-                dots: true,
-            }
-        }
-    ]
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 1600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true,
+        arrows: true,
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: true,
+        arrows: true,
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: true,
+        arrows: true,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        dots: true,
+      }
+    }
+  ]
 };
 
 export const StyledSlider = styled(Slider)`
@@ -199,7 +201,7 @@ overflow: hidden;
 display: flex;
 justify-content: center;
 align-items: center;
-margin-bottom: 80px;
+margin-bottom: 0px;
 background-position: center;
 
 @media only screen and (max-width: 600px) {
@@ -299,107 +301,107 @@ overflow-y: visible;
 `
 
 const ProjectData = [
-    {
-        projectYear: 'Projects 2002-2007',
-        projectYearShort: '\'02-\'07',
-        projects: [{
-            name: 'Zaf Gyms',
-            city: 'Mumbai'
-        }],
-        type: 'Wooden Flooring | Carpets'
+  {
+    projectYear: 'Projects 2002-2007',
+    projectYearShort: '\'02-\'07',
+    projects: [{
+      name: 'Zaf Gyms',
+      city: 'Mumbai'
+    }],
+    type: 'Wooden Flooring | Carpets'
+  },
+  {
+    projectYear: 'Projects 2008-2010',
+    projectYearShort: '\'08-\'10',
+    projects: [{
+      name: 'Niteen Parulekar Architects',
+      city: 'Mumbai'
+    }],
+    type: 'Furniture | Lighting | Artefacts'
+  },
+  {
+    projectYear: 'Projects 2011-2012',
+    projectYearShort: '\'11-\'12',
+    projects: [{
+      name: 'Project Head, Hakkasan',
+      city: 'Mumbai'
     },
     {
-        projectYear: 'Projects 2008-2010',
-        projectYearShort: '\'08-\'10',
-        projects: [{
-            name: 'Niteen Parulekar Architects',
-            city: 'Mumbai'
-        }],
-        type: 'Furniture | Lighting | Artefacts'
+      name: 'JSW Centre',
+      city: 'Mumbai'
     },
     {
-        projectYear: 'Projects 2011-2012',
-        projectYearShort: '\'11-\'12',
-        projects: [{
-            name: 'Project Head, Hakkasan',
-            city: 'Mumbai'
-        },
-        {
-            name: 'JSW Centre',
-            city: 'Mumbai'
-        },
-        {
-            name: 'Sahara Pariwar (Offices and Hotel)',
-            city: 'Mumbai'
-        }
-        ],
-        type: 'Furniture | Lighting | Artefacts'
+      name: 'Sahara Pariwar (Offices and Hotel)',
+      city: 'Mumbai'
+    }
+    ],
+    type: 'Furniture | Lighting | Artefacts'
+  },
+  {
+    projectYear: 'Projects 2013',
+    projectYearShort: '\'13',
+    projects: [{
+      name: 'Citibank BKC',
+      city: 'Mumbai'
+    }
+    ],
+    type: 'Furniture | Lighting | Artefacts'
+  },
+  {
+    projectYear: 'Projects 2014-2019',
+    projectYearShort: '\'14-\'19',
+    projects: [{
+      name: 'Amazon Headquarters',
+      city: 'Mumbai | Chennai | Pune'
     },
     {
-        projectYear: 'Projects 2013',
-        projectYearShort: '\'13',
-        projects: [{
-            name: 'Citibank BKC',
-            city: 'Mumbai'
-        }
-        ],
-        type: 'Furniture | Lighting | Artefacts'
+      name: 'Deloitte',
+      city: 'Mumbai | Chennai | Pune'
     },
     {
-        projectYear: 'Projects 2014-2019',
-        projectYearShort: '\'14-\'19',
-        projects: [{
-            name: 'Amazon Headquarters',
-            city: 'Mumbai | Chennai | Pune'
-        },
-        {
-            name: 'Deloitte',
-            city: 'Mumbai | Chennai | Pune'
-        },
-        {
-            name: 'Lupin',
-            city: 'Mumbai'
-        },
-        {
-            name: 'Reliance Convention Centre',
-            city: 'Mumbai'
-        },
-        {
-            name: 'Fairfield Marriot | Marriot Office',
-            city: 'Belgium'
-        }
-        ],
-        type: 'Furniture | Lighting | Artefacts'
+      name: 'Lupin',
+      city: 'Mumbai'
     },
     {
-        projectYear: 'Projects 2020-2021',
-        projectYearShort: '\'20-\'21',
-        projects: [{
-            name: 'Showflat Pali Hill Navroze',
-            city: 'Mumbai'
-        },
-        {
-            name: 'Reviv Clinic',
-            city: 'Mumbai'
-        }
-        ],
-        type: 'Furniture | Lighting | Artefacts'
+      name: 'Reliance Convention Centre',
+      city: 'Mumbai'
     },
+    {
+      name: 'Fairfield Marriot | Marriot Office',
+      city: 'Belgium'
+    }
+    ],
+    type: 'Furniture | Lighting | Artefacts'
+  },
+  {
+    projectYear: 'Projects 2020-2021',
+    projectYearShort: '\'20-\'21',
+    projects: [{
+      name: 'Showflat Pali Hill Navroze',
+      city: 'Mumbai'
+    },
+    {
+      name: 'Reviv Clinic',
+      city: 'Mumbai'
+    }
+    ],
+    type: 'Furniture | Lighting | Artefacts'
+  },
 ]
 
 const Projects = () => {
-    return (
-        <StyledRowWithBG>
-            <HeadingCenteredCol span={24}>
-                <StyledDivider>Projects</StyledDivider>
-            </HeadingCenteredCol>
-            <ProjectItemCol span={20}>
-                <StyledSlider {...settings}>
-                    {ProjectData.map((data) => { return <ProjectItem data={data} /> })}
-                </StyledSlider>
-            </ProjectItemCol>
-        </StyledRowWithBG>
-    );
+  return (
+    <StyledRowWithBG>
+      <HeadingCenteredCol span={24}>
+        <StyledDivider>P &nbsp;&nbsp;R&nbsp;&nbsp; O&nbsp;&nbsp; J&nbsp;&nbsp; E&nbsp;&nbsp; C&nbsp;&nbsp; T&nbsp;&nbsp; S</StyledDivider>
+      </HeadingCenteredCol>
+      <ProjectItemCol span={20}>
+        <StyledSlider {...settings}>
+          {ProjectData.map((data) => { return <ProjectItem data={data} /> })}
+        </StyledSlider>
+      </ProjectItemCol>
+    </StyledRowWithBG>
+  );
 }
 
 export default Projects;

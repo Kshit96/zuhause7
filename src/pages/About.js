@@ -1,9 +1,9 @@
 import React from 'react';
 import { Row, Image, Divider } from 'antd';
-import BG from '../images/AboutBG.png';
+import BG from '../images/CategoriesBG.png';
 import { StyledRow } from './CommonStyledComponents';
 import styled from 'styled-components';
-import Profile from '../images/ZahraChadha.jpeg';
+import Profile from '../images/ZahraChadha1.png';
 import { FullWidthRow } from './Categories';
 import { CenteredCol } from './LandingPage'
 
@@ -104,7 +104,7 @@ const TextCenteredCol = styled(CenteredCol)`
 
 export const AboutCol = styled(CenteredCol)`
 text-align: center;
-color: #0F121A;
+color: white;
 display: inline;
 overflow: hidden;
 
@@ -130,7 +130,7 @@ overflow: hidden;
 `
 
 export const BoldP = styled.p`
-color: #0F121A;
+color: white;
 font-family: AvenirNextBold;
 width: fit-content;
 margin: 0!important;
@@ -181,19 +181,18 @@ object-position: center right;
 
 `
 export const StyledDivider = styled(Divider)`
-text-shadow: 0px 0px 30px #A99060;
-color: #0F121A!Important;
+color: white!Important;
 font-family: AvenirNextBold;
 
 max-width: 60%!Important;
 min-width: 60%!Important;
 &::before{
-    border-top-color: rgba(15, 18, 26, 1)!Important;
+    border-top-color: #FCFEFB!Important;
     top: 0!important;
 }
 
 &::after{
-    border-top-color: rgba(15, 18, 26, 1)!Important;
+    border-top-color: #FCFEFB!Important;
     top: 0!important;
 }
 

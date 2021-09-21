@@ -29,6 +29,8 @@ transition: margin-top 0.25s, margin-bottom 0.25s;
 overflow: hidden;
 display: flex;
 flex-direction: column;
+color: #FCFEFB;
+z-index: 5;
 
 @media only screen and (max-width: 600px) {
     margin-top: -5rem;
@@ -68,6 +70,7 @@ margin-top: 2rem;
 text-align: center;
 font-family: AvenirNextBold;
 transition: margin-top 0.5s;
+color: #FCFEFB;
 
 @media only screen and (max-width: 600px) {
     margin-top: 0.5rem;
@@ -164,6 +167,7 @@ flex-direction: column;
     height: 200px;
     transition: height 0.25s, width 0.25s, margin-top 0.25s, border 0.2s, padding 0.25s;
     transform-origin: center;
+    border-color: #FCFEFB!important;
     border-radius: 50%;
     object-fit: cover;
     object-position: center right;
@@ -284,6 +288,7 @@ flex-direction: column;
     z-index: 1;
     border: 1px solid;
     border-bottom: 1px;
+    border-color: #FCFEFB;
     top: -50px;
     height: 1px;
     transition: width 0.52s;
@@ -338,6 +343,7 @@ flex-direction: column;
     z-index: 1;
     border: 1px solid;
     border-bottom: 1px;
+    border-color: #FCFEFB;
     bottom: -20px;
     width: 280px;
     height: 1px;
@@ -444,6 +450,7 @@ flex-direction: column;
     left: 50%;
     border: 1px solid;
     border-width: 0 0 0 1px;
+    border-color: #FCFEFB;
     width: 1px;
     height: 50px;
 }
@@ -457,6 +464,7 @@ flex-direction: column;
     left: 50%;
     border: 1px solid;
     border-width: 0 0 0 1px;
+    border-color: #FCFEFB;
     width: 1px;
     height: 40px;
     transition: bottom 0.25s;

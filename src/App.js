@@ -164,8 +164,8 @@ const App = () => {
       </StyledButton>
       <LandingPage />
       <Categories />
-      <About />
       <Projects />
+      <About />
     </>
   );
 }

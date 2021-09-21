@@ -1,7 +1,7 @@
 import { Row, Col } from 'antd';
 import styled from 'styled-components';
 import { ReactComponent as Logo } from '../images/ZuHause_Logo_Complete_Light.svg';
-import BG from '../images/LandingPageBG.png';
+import BG from '../images/CategoriesBG.png';
 import { StyledRow, FullWidthRow } from './CommonStyledComponents';
 
 const StyledRowWithBG = styled(Row)`
