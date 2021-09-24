@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Image, Divider } from 'antd';
-import BG from '../images/CategoriesBG.png';
+import BG from '../images/AboutBG.png';
 import { StyledRow } from './CommonStyledComponents';
 import styled from 'styled-components';
 import Profile from '../images/ZahraChadha1.png';

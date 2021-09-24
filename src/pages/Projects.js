@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import BG from '../images/CategoriesBG.png';
+import BG from '../images/ProjectsBG.png';
 import styled from 'styled-components';
 import { CenteredCol } from './LandingPage'
 import { StyledDivider } from './About';
