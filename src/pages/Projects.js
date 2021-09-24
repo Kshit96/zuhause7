@@ -191,6 +191,10 @@ align-items: flex-end;
       }
 }
 
+.slick-dots{
+  bottom: 15.625rem;
+}
+
 `
 
 const StyledRowWithBG = styled(Row)`

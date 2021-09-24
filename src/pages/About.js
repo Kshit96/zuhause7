@@ -104,7 +104,7 @@ const TextCenteredCol = styled(CenteredCol)`
 
 export const AboutCol = styled(CenteredCol)`
 text-align: center;
-color: white;
+color: #0f121a;
 display: inline;
 overflow: hidden;
 
@@ -181,18 +181,18 @@ object-position: center right;
 
 `
 export const StyledDivider = styled(Divider)`
-color: white!Important;
+color: #0f121a!Important;
 font-family: AvenirNextBold;
 
 max-width: 60%!Important;
 min-width: 60%!Important;
 &::before{
-    border-top-color: #FCFEFB!Important;
+    border-top-color: #0f121a!Important;
     top: 0!important;
 }
 
 &::after{
-    border-top-color: #FCFEFB!Important;
+    border-top-color: #0f121a!Important;
     top: 0!important;
 }
 

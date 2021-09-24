@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ReactComponent as Logo } from '../images/ZuHause_Logo_Complete_Light.svg';
 import BG from '../images/LandingPageBG.png';
 import { StyledRow, FullWidthRow } from './CommonStyledComponents';
+import { useEffect } from 'react';
 
 const StyledRowWithBG = styled(Row)`
 background-image: url(${BG});
@@ -83,17 +84,8 @@ display: inline;
 @media only screen and (min-width: 1600px) {
   font-size: 1.188rem;
 }
-`
 
-// Mobile: 360 x 640
-// Mobile: 375 x 667
-// Mobile: 360 x 720
-// iPhone X: 375 x 812
-// Pixel 2: 411 x 731
-// Tablet: 768 x 1024
-// Laptop: 1280 x 720
-// Laptop: 1366 x 768
-// High-res laptop or desktop: 1920 x 1080
+`
 
 export const BoldP = styled.p`
 color: #A99060;
@@ -110,6 +102,30 @@ height:100%;
 `
 
 const LandingPage = () => {
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting && entry.target.className.includes('fade-in-logo')) {
+          entry.target.classList.add('fade-in-logo-animate');
+          return;
+        }
+
+        if (entry.isIntersecting && entry.target.className.includes('fade-in-para1')) {
+          entry.target.classList.add('fade-in-para1-animate');
+          return;
+        }
+
+        entry.target.classList.remove('fade-in-para1-animate');
+        entry.target.classList.remove('fade-in-logo-animate');
+      });
+    }, { rootMargin: "0px 0px -300px 0px" });
+    observer.observe(document.querySelector('.fade-in-logo'));
+    observer.observe(document.querySelector('.fade-in-para1'));
+  }, [])
+
+
   return (
     <StyledRowWithBG justify="center" align="middle">
       <FullWidthRow><CenteredCol
@@ -118,7 +134,8 @@ const LandingPage = () => {
         md={{ span: 6 }}
         lg={{ span: 4 }}
         xl={{ span: 4 }}
-        xxl={{ span: 4 }}>
+        xxl={{ span: 4 }}
+        className={'fade-in-logo fade-in-logo-animate'}>
         <StyledLogo style={{ alignSelf: 'flex-end' }} />
       </CenteredCol>
         <FullWidthRow>
@@ -130,7 +147,7 @@ const LandingPage = () => {
         xl={{ span: 18 }}
         xxl={{ span: 18 }}>
           <br />
-          <p>Zu•hau•se  / [tsuˈhauzə] /, meaning <BoldP>at home</BoldP>, is a dream put to implementation by <BoldP>Zahra Chadha.</BoldP>
+          <p className={'fade-in-para1 fade-in-para1-animate'}>Zu•hau•se  / [tsuˈhauzə] /, meaning <BoldP>at home</BoldP>, is a dream put to implementation by <BoldP>Zahra Chadha.</BoldP>
             <br /><br />
             Our aim is to ensure you get what you want to make your spaces as <BoldP>functional, comfortable and warm</BoldP> as possible.<br />
             Let your dreams of getting that specific lighting, furniture, signature art piece, flooring or rugs be converted into reality by Zuhause7.<br />

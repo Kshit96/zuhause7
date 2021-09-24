@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import { Row, Image, Modal } from 'antd';
 import BG from '../images/CategoriesBG.png';
 import { CenteredCol, IntroductionCol, BoldP } from './LandingPage';
@@ -300,6 +300,7 @@ const StyledHR = styled.div`
 `
 
 const ImageCol = styled.div`
+
 overflow: hidden;
 display: flex;
 position: relative;
@@ -598,6 +599,21 @@ const Categories = () => {
           return;
         }
 
+        if (entry.isIntersecting && entry.target.className.includes('furniture')) {
+          entry.target.classList.add('furniture-animate');
+          return;
+        }
+
+        if (entry.isIntersecting && entry.target.className.includes('lighting')) {
+          entry.target.classList.add('lighting-animate');
+          return;
+        }
+
+        if (entry.isIntersecting && entry.target.className.includes('rtefacts')) {
+          entry.target.classList.add('artefacts-animate');
+          return;
+        }
+
         if (entry.isIntersecting && entry.target.className.includes('fade-in-wrapper')) {
           entry.target.classList.add('fade-in-wrapper-animate');
           return;
@@ -605,10 +621,16 @@ const Categories = () => {
 
         entry.target.classList.remove('styled-hr-animate');
         entry.target.classList.remove('fade-in-wrapper-animate');
+        entry.target.classList.remove('furniture-animate');
+        entry.target.classList.remove('lighting-animate');
+        entry.target.classList.remove('artefacts-animate');
       });
     }, { rootMargin: "0px 0px -300px 0px" });
     observer.observe(document.querySelector('.styled-hr'));
     observer.observe(document.querySelector('.fade-in-wrapper'));
+    observer.observe(document.querySelector('.furniture'));
+    observer.observe(document.querySelector('.lighting'));
+    observer.observe(document.querySelector('.artefacts'));
   }, [])
 
   let imageWidth = '720px';
@@ -660,8 +682,8 @@ const Categories = () => {
         <ProductGallery images={images} />
       </StyledModalWithBG>
       <FullWidthRowIntro>
-        <CenteredCol style={{ flexDirection: 'column' }} span={24}>
-          <HeadingP className={'fade-in-wrapper fade-in-wrapper-animate'}>Explore Now</HeadingP>
+        <CenteredCol className={'fade-in-wrapper fade-in-wrapper-animate'} style={{ flexDirection: 'column' }} span={24}>
+          <HeadingP >Explore Now</HeadingP>
           <StyledHR className={'hr-wrapper'}><hr className={'styled-hr styled-hr-animate'} /></StyledHR>
           <IntroductionCol
             xs={{ span: 18 }}
@@ -670,7 +692,8 @@ const Categories = () => {
             lg={{ span: 18 }}
             xl={{ span: 18 }}
             xxl={{ span: 18 }}
-            style={{ marginTop: '2rem' }}>
+            style={{ marginTop: '2rem' }}
+           >
             Residential Projects. Commercial Spaces. Show flats. Clinics.<br />
             We can retrofit your space no matter what segment it belongs to.<br />
             Explore through our range of products that we can help you source and make
@@ -682,21 +705,23 @@ const Categories = () => {
         <StyledSlider {...settings} >
           <ImageCol
             onClick={() => showModal('FURNITURE')}
-          >
+          ><div className={'furniture furniture-animate'}>
             <Image preview={false} src={Furniture} />
-            <StyledSpan><HeadingP>FURNITURE</HeadingP></StyledSpan>
+            <StyledSpan><HeadingP>FURNITURE</HeadingP></StyledSpan></div>
           </ImageCol>
           <ImageCol
             onClick={() => showModal('LIGHTING')}
-          >
+            
+          ><div className={'lighting lighting-animate'}>
             <Image preview={false} src={Lighting} />
-            <StyledSpan><HeadingP>LIGHTING</HeadingP></StyledSpan>
+            <StyledSpan><HeadingP>LIGHTING</HeadingP></StyledSpan></div>
           </ImageCol>
           <ImageCol
             onClick={() => showModal('ARTEFACTS')}
-          >
+            
+          ><div className={'artefacts artefacts-animate'}>
             <Image preview={false} src={Artefacts} />
-            <StyledSpan><HeadingP>ARTEFACTS</HeadingP></StyledSpan>
+            <StyledSpan><HeadingP>ARTEFACTS</HeadingP></StyledSpan></div>
           </ImageCol>
         </StyledSlider>
       </FullWidthRowSpaceAround>

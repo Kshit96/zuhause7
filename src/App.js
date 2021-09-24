@@ -8,6 +8,7 @@ import Categories from './pages/Categories';
 import { ReactComponent as ContactUs } from './icons/ContactUs.svg';
 import Projects from './pages/Projects';
 import About from './pages/About';
+import Footer from './pages/Footer';
 
 const StyledButton = styled(Button)`
 overflow: hidden;
@@ -166,6 +167,7 @@ const App = () => {
       <Categories />
       <Projects />
       <About />
+      <Footer />
     </>
   );
 }

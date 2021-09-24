@@ -39,5 +39,65 @@
 .fade-in-wrapper-animate{
   opacity: 1;
   margin-top: 0rem!important;
-  transition: opacity 1.5s, margin 2s ease;
+  transition: opacity 1.5s, margin 1s ease;
+}
+
+.furniture{
+  opacity: 0;
+  margin-top: 5rem!important;
+  transition: opacity 0.5s, margin 0.5s ease;
+}
+
+.furniture-animate{
+  opacity: 1;
+  margin-top: 0rem!important;
+  transition: opacity 1.5s, margin 1s ease;
+}
+
+.lighting{
+  opacity: 0;
+  margin-top: 5rem!important;
+  transition: opacity 0.5s, margin 0.5s ease;
+}
+
+.lighting-animate{
+  opacity: 1;
+  margin-top: 0rem!important;
+  transition: opacity 1.5s, margin 1s ease;
+}
+
+.artefacts{
+  opacity: 0;
+  margin-top: 5rem!important;
+  transition: opacity 0.5s, margin 0.5s ease;
+}
+
+.artefacts-animate{
+  opacity: 1;
+  margin-top: 0rem!important;
+  transition: opacity 1.5s, margin 1s ease;
+}
+
+.fade-in-logo{
+  opacity: 0;
+  margin-top: 5rem!important;
+  transition: opacity 0.5s, margin 0.5s ease;
+}
+
+.fade-in-logo-animate{
+  opacity: 1;
+  margin-top: 0rem!important;
+  transition: opacity 1.5s, margin 1s ease;
+}
+
+.fade-in-para1{
+  opacity: 0;
+  margin-top: 5rem!important;
+  transition: opacity 0.5s, margin 0.5s ease;
+}
+
+.fade-in-para1-animate{
+  opacity: 1;
+  margin-top: 0rem!important;
+  transition: opacity 1.5s, margin 1s ease;
 }
