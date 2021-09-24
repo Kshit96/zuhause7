@@ -1,97 +1,53 @@
-import furniture from '../images/Furniture.jpeg'
-import lighting from '../images/Lighting.jpeg'
-import artefacts from '../images/Artefacts.jpeg'
+
+import _ from 'lodash';
+function importAll(r) {
+  return r.keys().map(r);
+}
+
 export const FURNITURE = (scale) => {
-  return (
-    [
+  const images = importAll(require.context('../images/categories/furniture', false, /\.(png|jpe?g|svg)$/));
+  const furnitureObject = images.map((image)=>{
+    return (
       {
-        original: furniture,
-        thumbnail: furniture,
+        original: image.default,
+        thumbnail: image.default,
         originalHeight: scale.imageHeight,
         originalWidth: scale.imageWidth,
-      },
-      {
-        original: furniture,
-        thumbnail: furniture,
-        originalHeight: scale.imageHeight,
-        originalWidth: scale.imageWidth,
-      }, {
-        original: furniture,
-        thumbnail: furniture,
-        originalHeight: scale.imageHeight,
-        originalWidth: scale.imageWidth,
-      },
-      {
-        original: furniture,
-        thumbnail: furniture,
-        originalHeight: scale.imageHeight,
-        originalWidth: scale.imageWidth,
-      },
-      {
-        original: furniture,
-        thumbnail: furniture,
-        originalHeight: scale.imageHeight,
-        originalWidth: scale.imageWidth,
-      }, {
-        original: furniture,
-        thumbnail: furniture,
-        originalHeight: scale.imageHeight,
-        originalWidth: scale.imageWidth,
-      },
-      {
-        original: furniture,
-        thumbnail: furniture,
-        originalHeight: scale.imageHeight,
-        originalWidth: scale.imageWidth,
-      }, {
-        original: furniture,
-        thumbnail: furniture,
-        originalHeight: scale.imageHeight,
-        originalWidth: scale.imageWidth,
-      },
-    ]
-  )
+      }
+    )
+  })
+  
+  return furnitureObject;
 };
 
 export const LIGHTING = scale => {
-  return ([{
-    original: lighting,
-    thumbnail: lighting,
-    originalHeight: scale.imageHeight,
-    originalWidth: scale.imageWidth,
-  },
-  {
-    original: lighting,
-    thumbnail: lighting,
-    originalHeight: scale.imageHeight,
-    originalWidth: scale.imageWidth,
-  }, {
-    original: lighting,
-    thumbnail: lighting,
-    originalHeight: scale.imageHeight,
-    originalWidth: scale.imageWidth,
-  },
-  ])
+  const images = importAll(require.context('../images/categories/lighting', false, /\.(png|jpe?g|svg)$/));
+  const lightingObject = images.map((image)=>{
+    return (
+      {
+        original: image.default,
+        thumbnail: image.default,
+        originalHeight: scale.imageHeight,
+        originalWidth: scale.imageWidth,
+      }
+    )
+  })
+  
+  return lightingObject;
 };
 
 export const ARTEFACTS = scale => {
-  return ([
-    {
-      original: artefacts,
-      thumbnail: artefacts,
-      originalHeight: scale.imageHeight,
-      originalWidth: scale.imageWidth,
-    },
-    {
-      original: artefacts,
-      thumbnail: artefacts,
-      originalHeight: scale.imageHeight,
-      originalWidth: scale.imageWidth,
-    }, {
-      original: artefacts,
-      thumbnail: artefacts,
-      originalHeight: scale.imageHeight,
-      originalWidth: scale.imageWidth,
-    },
-  ])
+  const images = importAll(require.context('../images/categories/artefacts', false, /\.(png|jpe?g|svg)$/));
+  const artefactsObject = images.map((image)=>{
+    return (
+      {
+        original: image.default,
+        thumbnail: image.default,
+        originalHeight: scale.imageHeight,
+        originalWidth: scale.imageWidth,
+      }
+    )
+  })
+  
+  return artefactsObject;
 };

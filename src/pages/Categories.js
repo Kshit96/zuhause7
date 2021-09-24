@@ -85,8 +85,8 @@ width: 100%;
 }
 
 .slick-track{
-  display: flex;
-  flex-direction: row;
+    flex-direction: row;
+    display: flex;
     @media only screen and (max-width: 600px) {
         height: 28rem!important;
       }
