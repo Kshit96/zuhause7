@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Image, Modal } from 'antd';
 import BG from '../images/CategoriesBG.png';
 import { CenteredCol, IntroductionCol, BoldP } from './LandingPage';
@@ -8,7 +8,7 @@ import Lighting from '../images/Lighting.jpeg';
 import Artefacts from '../images/Artefacts.jpeg';
 import { LIGHTING, FURNITURE, ARTEFACTS } from '../data/CatalogueImages';
 import ProductGallery from './ProductGallery';
-import { StyledRow, FullWidthRow } from './CommonStyledComponents';
+import { FullWidthRow } from './CommonStyledComponents';
 import Slider from "react-slick";
 
 export const settings = {
@@ -581,7 +581,7 @@ const Categories = () => {
 
   const [images, setImages] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   const handleCancel = () => {
     setIsModalVisible(false);

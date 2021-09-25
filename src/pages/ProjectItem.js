@@ -696,7 +696,7 @@ const ProjectItem = props => {
     let calculatedPadding = (5-props.data.projects.length)*30;
     let calculatedMargin = (props.data.projects.length)*30-5 + 'px 0px 0px 0px';
 
-    const { height, width } = useWindowDimensions();
+    const { width } = useWindowDimensions();
     if(width<768){
         calculatedPadding = 0;
     }

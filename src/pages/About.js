@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Row, Image, Divider } from 'antd';
 import BG from '../images/AboutBG.png';
-import { StyledRow } from './CommonStyledComponents';
 import styled from 'styled-components';
 import Profile from '../images/ZahraChadha1.png';
-import { FullWidthRow } from './Categories';
 import { CenteredCol } from './LandingPage'
 
 
@@ -228,36 +226,67 @@ min-width: 60%!Important;
 `
 
 const About = () => {
-    return (
-        <StyledRowWithBG>
-            <HeadingCenteredCol span={24}>
-                <StyledImage preview={false} src={Profile} />
-                <StyledDivider>About Zahra Chadha</StyledDivider>
-            </HeadingCenteredCol>
-            <TextCenteredCol span={24}>
-                <AboutCol 
-                    xs={{ span: 20 }}
-                    sm={{ span: 20 }}
-                    md={{ span: 18 }}
-                    lg={{ span: 18 }}
-                    xl={{ span: 18 }}
-                    xxl={{ span: 18 }}
-                >
-                    <br />
-                    <p>Having done her diploma in interior designing, Zahra Chadha was sure she would be catering to product specialisation, sales and enhancing interior spaces. In 2000, when wooden floorings entered the Indian market, she worked with architects and designers alike for residential, corporate and commercial projects.
-                        <br /><br />
-                        In 2011, the field of lighting design, supply and installation became part of her portfolio. Corporate houses in Mumbai, Pune, Hyderabad, Bangalore along-with high end residential projects were a challenge to take on for designing and execution in lighting. This afforded her the privilege of being part of named architectural firms in Mumbai that added to her knowledge and expertise of spaces and client requirements.
-                        <br /><br />
-                        The curiosity for learning took has taken her to many exhibitions making furniture and artefacts another area of interest.
-                        <br /><br />
-                        <i style={{ fontWeight: '600' }}>“The culmination of any project is when the clients finally see the end result of the journey where you handhold them, help select a good product, procure it, and handle the logistics. It is a very emotional experience, and it is all handled by Zuhause7.”</i>
-                        <BoldP><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Zahra Chadha</i></BoldP>
-                        <br />
-                    </p>
-                </AboutCol>
-            </TextCenteredCol>
-        </StyledRowWithBG>
-    );
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting && entry.target.className.includes('image')) {
+          entry.target.classList.add('image-animate');
+          return;
+        }
+
+        if (entry.isIntersecting && entry.target.className.includes('title')) {
+          entry.target.classList.add('title-animate');
+          return;
+        }
+
+        if (entry.isIntersecting && entry.target.className.includes('body')) {
+          entry.target.classList.add('body-animate');
+          return;
+        }
+
+        entry.target.classList.remove('image-animate');
+        entry.target.classList.remove('title-animate');
+        entry.target.classList.remove('body-animate');
+      });
+    }, { rootMargin: "0px 0px -300px 0px" });
+    observer.observe(document.querySelector('.image'));
+    observer.observe(document.querySelector('.title'));
+    observer.observe(document.querySelector('.body'));
+  }, [])
+
+  return (
+    <StyledRowWithBG>
+      <HeadingCenteredCol span={24}>
+        <StyledImage className={'image image-animate'} preview={false} src={Profile} />
+        <StyledDivider className={'title title-animate'}>About Zahra Chadha</StyledDivider>
+      </HeadingCenteredCol>
+      <TextCenteredCol span={24}>
+        <AboutCol
+          xs={{ span: 20 }}
+          sm={{ span: 20 }}
+          md={{ span: 18 }}
+          lg={{ span: 18 }}
+          xl={{ span: 18 }}
+          xxl={{ span: 18 }}
+          className={'body body-animate'}
+        >
+          <br />
+          <p>Having done her diploma in interior designing, Zahra Chadha was sure she would be catering to product specialisation, sales and enhancing interior spaces. In 2000, when wooden floorings entered the Indian market, she worked with architects and designers alike for residential, corporate and commercial projects.
+            <br /><br />
+            In 2011, the field of lighting design, supply and installation became part of her portfolio. Corporate houses in Mumbai, Pune, Hyderabad, Bangalore along-with high end residential projects were a challenge to take on for designing and execution in lighting. This afforded her the privilege of being part of named architectural firms in Mumbai that added to her knowledge and expertise of spaces and client requirements.
+            <br /><br />
+            The curiosity for learning took has taken her to many exhibitions making furniture and artefacts another area of interest.
+            <br /><br />
+            <i style={{ fontWeight: '600' }}>“The culmination of any project is when the clients finally see the end result of the journey where you handhold them, help select a good product, procure it, and handle the logistics. It is a very emotional experience, and it is all handled by Zuhause7.”</i>
+            <BoldP><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Zahra Chadha</i></BoldP>
+            <br />
+          </p>
+        </AboutCol>
+      </TextCenteredCol>
+    </StyledRowWithBG>
+  );
 }
 
 export default About;

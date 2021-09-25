@@ -1,6 +1,5 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
-import styled from 'styled-components';
 
 const ProductGallery = props =>{
     return(

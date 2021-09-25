@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Row, Col } from 'antd';
 import BG from '../images/ProjectsBG.png';
 import styled from 'styled-components';
@@ -394,12 +394,35 @@ const ProjectData = [
 ]
 
 const Projects = () => {
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting && entry.target.className.includes('project-heading')) {
+          entry.target.classList.add('project-heading-animate');
+          return;
+        }
+
+        if (entry.isIntersecting && entry.target.className.includes('projects')) {
+          entry.target.classList.add('projects-animate');
+          return;
+        }
+
+        entry.target.classList.remove('project-heading-animate');
+        entry.target.classList.remove('projects-animate');
+      });
+    }, { rootMargin: "0px 0px -300px 0px" });
+    observer.observe(document.querySelector('.project-heading'));
+    observer.observe(document.querySelector('.projects'));
+  }, [])
+
   return (
     <StyledRowWithBG>
-      <HeadingCenteredCol span={24}>
+      <HeadingCenteredCol className={'project-heading project-heading-animate'} span={24}>
         <StyledDivider>P &nbsp;&nbsp;R&nbsp;&nbsp; O&nbsp;&nbsp; J&nbsp;&nbsp; E&nbsp;&nbsp; C&nbsp;&nbsp; T&nbsp;&nbsp; S</StyledDivider>
       </HeadingCenteredCol>
-      <ProjectItemCol span={20}>
+      <ProjectItemCol className={'projects projects-animate'} span={20}>
         <StyledSlider {...settings}>
           {ProjectData.map((data) => { return <ProjectItem data={data} /> })}
         </StyledSlider>

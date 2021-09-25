@@ -1,9 +1,9 @@
 import React from 'react';
-import { Row, Modal, Col } from 'antd';
+import { Row, Col } from 'antd';
 import BG from '../images/CategoriesBG.png';
 import { CenteredCol } from './LandingPage';
 import styled from 'styled-components';
-import { StyledRow, FullWidthRow } from './CommonStyledComponents';
+import { FullWidthRow } from './CommonStyledComponents';
 import { InstagramOutlined, FacebookOutlined } from '@ant-design/icons';
 
 const StyledRowWithBG = styled(Row)`
