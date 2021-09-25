@@ -104,25 +104,21 @@
 
 .project-heading{
   opacity: 0;
-  margin-top: 5rem!important;
   transition: opacity 0.5s, margin 0.5s ease;
 }
 
 .project-heading-animate{
   opacity: 1;
-  margin-top: 0rem!important;
   transition: opacity 1.5s, margin 1s ease;
 }
 
 .projects{
   opacity: 0;
-  margin-top: 5rem!important;
   transition: opacity 0.5s, margin 0.5s ease;
 }
 
 .projects-animate{
   opacity: 1;
-  margin-top: 0rem!important;
   transition: opacity 1.5s, margin 1s ease;
 }
 
@@ -138,24 +134,20 @@
 
 .title{
   opacity: 0;
-  margin-top: 5rem!important;
   transition: opacity 0.5s, margin 0.5s ease;
 }
 
 .title-animate{
   opacity: 1;
-  margin-top: 0rem!important;
   transition: opacity 1.5s, margin 1s ease;
 }
 
 .body{
   opacity: 0;
-  margin-top: 5rem!important;
   transition: opacity 0.5s, margin 0.5s ease;
 }
 
 .body-animate{
   opacity: 1;
-  margin-top: 0rem!important;
   transition: opacity 1.5s, margin 1s ease;
 }

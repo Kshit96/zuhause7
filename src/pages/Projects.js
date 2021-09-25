@@ -192,7 +192,30 @@ align-items: flex-end;
 }
 
 .slick-dots{
+  
+  @media only screen and (max-width: 600px) {
+    bottom: 0rem;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    bottom: 0rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    bottom: 0rem;
+  }
+  
+@media only screen and (min-width: 992px) {
   bottom: 15.625rem;
+  }
+
+@media only screen and (min-width: 1200px) {
+  bottom: 15.625rem;
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    bottom: 15.625rem;
+  }
 }
 
 `
