@@ -225,6 +225,33 @@ min-width: 60%!Important;
 
 `
 
+const StyledI = styled.i`
+fontWeight: '600'
+@media only screen and (max-width: 600px) {
+  fontSize: '0.5rem'
+}
+@media only screen and (min-width: 600px) {
+  fontSize: '0.5rem'
+}
+
+@media only screen and (min-width: 768px) {
+  fontSize: '0.5rem'
+}
+
+@media only screen and (min-width: 992px) {
+  fontSize: '1rem'
+}
+
+@media only screen and (min-width: 1200px) {
+  fontSize: '1rem'
+}
+
+@media only screen and (min-width: 1600px) {
+  fontSize: '1rem'
+}
+
+`
+
 const About = () => {
 
   useEffect(() => {
@@ -279,8 +306,8 @@ const About = () => {
             <br /><br />
             The curiosity for learning took has taken her to many exhibitions making furniture and artefacts another area of interest.
             <br /><br />
-            <i style={{ fontWeight: '600', fontSize: '0.5rem' }}>“The culmination of any project is when the clients finally see the end result of the journey where you handhold them, help select a good product, procure it, and handle the logistics. It is a very emotional experience, and it is all handled by Zuhause7.”</i>
-            <BoldP><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Zahra Chadha</i></BoldP>
+            <StyledI >“The culmination of any project is when the clients finally see the end result of the journey where you handhold them, help select a good product, procure it, and handle the logistics. It is a very emotional experience, and it is all handled by Zuhause7.”</StyledI>
+            <br/><BoldP><i style={{color: 'black'}}>&nbsp;&nbsp;-Zahra Chadha</i></BoldP>
             <br />
           </p>
         </AboutCol>
