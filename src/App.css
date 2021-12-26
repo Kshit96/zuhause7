@@ -151,3 +151,7 @@
   opacity: 1;
   transition: opacity 1.5s, margin 1s ease;
 }
+
+.ant-modal-mask{
+  backdrop-filter: blur(5px);
+}

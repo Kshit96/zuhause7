@@ -558,8 +558,35 @@ p{
 
 const StyledModalWithBG = styled(Modal)`
 
-height: 80vh;
-width: 80vw!important;
+@media only screen and (max-width: 600px) {
+  height: 20vh;
+  width: 80vw!important;
+}
+
+@media only screen and (min-width: 600px) {
+  height: 20vh;
+  width: 80vw!important;
+}
+
+@media only screen and (min-width: 768px) {
+  height: 80vh;
+  width: 80vw!important;
+}
+
+@media only screen and (min-width: 992px) {
+  height: 80vh;
+  width: 80vw!important;
+}
+
+@media only screen and (min-width: 1200px) {
+  height: 80vh;
+  width: 80vw!important;
+}
+
+@media only screen and (min-width: 1600px) {
+  height: 80vh;
+  width: 80vw!important;
+}
 
 .ant-modal-body{
     padding: 0;
@@ -633,33 +660,33 @@ const Categories = () => {
     observer.observe(document.querySelector('.artefacts'));
   }, [])
 
-  let imageWidth = '720px';
+  let imageWidth = '1280';
   let imageHeight = '720px';
 
   const showModal = category => {
 
     if (width >= 1600) {
       imageHeight = '720px';
-      imageWidth = '720px';
+      imageWidth = '1280px';
     }
     else if (width >= 1200) {
       imageHeight = '480px';
-      imageWidth = '480px';
+      imageWidth = '854px';
     }
     else if (width >= 992) {
       imageHeight = '480px';
-      imageWidth = '480px';
+      imageWidth = '854px';
     }
     else if (width >= 768) {
       imageHeight = '480px';
-      imageWidth = '480px';
+      imageWidth = '854px';
     }
     else if (width >= 600) {
-      imageHeight = '360px';
+      imageHeight = '480px';
       imageWidth = '480px';
     }
     else if (width < 600) {
-      imageHeight = '360px';
+      imageHeight = '480px';
       imageWidth = '480px';
     }
 
