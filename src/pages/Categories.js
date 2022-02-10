@@ -590,10 +590,15 @@ const StyledModalWithBG = styled(Modal)`
 
 .ant-modal-body{
     padding: 0;
-    background-color: #0F121A!important;
-    background-image: url(${BG})!important;
+    background: transparent!important;
+    // background-color: #0F121A!important;
+    // background-image: url(${BG})!important;
     background-size: cover!important;
   }
+
+.ant-modal-content{
+  background-color: #0F121AEE!important;
+}
 
 .ant-modal-close-x{
     color:#FCFEFB;
