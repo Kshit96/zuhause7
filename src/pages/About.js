@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Row, Image, Divider } from 'antd';
 import BG from '../images/AboutBG.png';
 import styled from 'styled-components';
-import Profile from '../images/ZahraChadha1.png';
+import Profile from '../images/ZCImage.jpeg';
 import { CenteredCol } from './LandingPage'
 
 

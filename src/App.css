@@ -155,3 +155,7 @@
 .ant-modal-mask{
   backdrop-filter: blur(5px);
 }
+
+.react-photo-gallery--gallery{
+  margin-top: 18rem;
+}

@@ -8,7 +8,7 @@ const ProductGallery = props =>{
          thumbnailPosition='bottom'
          autoplay='true'
          lazyload='true'
-         disableThumbnailScroll='true' />
+         disableThumbnailScroll='false' />
     )
 };
 
