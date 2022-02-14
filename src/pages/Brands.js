@@ -59,7 +59,7 @@ export const settings = {
         slidesToShow: 1,
         slidesToScroll: 1,
         initialSlide: 1,
-        dots: true,
+        dots: false,
       }
     }
   ]
@@ -131,12 +131,12 @@ height: 80%;
     align-items: center;
     @media only screen and (max-width: 600px) {
         height: 100%;
-        margin-top: 11rem;
+        // margin-top: 11rem;
       }
       
       @media only screen and (min-width: 600px) {
         height: 100%;
-        margin-top: 11rem;
+        // margin-top: 11rem;
       }
 
       @media only screen and (min-width: 768px) {
@@ -231,11 +231,11 @@ margin-bottom: 0px;
 background-position: center;
 
 @media only screen and (max-width: 600px) {
-    height: 768px;
+    height: 600px;
     width: 100%;
   }
   @media only screen and (min-width: 600px) {
-    height: 768px;
+    height: 600px;
     width: 100%;
   }
 
@@ -273,11 +273,11 @@ white-space: no-wrap;
 
 @media only screen and (max-width: 600px) {
     margin-top: -10rem; 
-    height: 90%;
+    height: 20%;
   }
   @media only screen and (min-width: 600px) {
     margin-top: -10rem; 
-    height: 90%;
+    height: 20%;
   }
 @media only screen and (min-width: 768px) {
     margin-top: -10rem; 
@@ -425,10 +425,10 @@ const BrandData = [
 "EICHHOLTZ",
 "KUNDALINI", 
 "BOVER",
-"COVET HOUSE", 
-"BGB ITALIA", 
+"COVET HOUSE",  
 "THE RUG COMPANY", 
-"CRATE & BARREL", 
+"CRATE & BARREL",
+"HOLLYHUNT", 
 ]
 
 const StyledP = styled.p`
@@ -442,26 +442,28 @@ justify-content: center!important;
 text-align: center;
 
 @media only screen and (max-width: 600px) {
-  
+  font-size: 2rem;
+  // margin-top: -20rem;
 }
 @media only screen and (min-width: 600px) {
-  
+  font-size: 2rem;
+  // margin-top: -20rem;
 }
 
 @media only screen and (min-width: 768px) {
-  
+  font-size: 3rem;
 }
 
 @media only screen and (min-width: 992px) {
-  
+  font-size: 3rem;
 }
 
 @media only screen and (min-width: 1200px) {
-
+  font-size: 3rem;
 }
 
 @media only screen and (min-width: 1600px) {
-
+  font-size: 3rem;
 }
 
 `
@@ -492,7 +494,7 @@ const Brands = () => {
 
   return (
     <StyledRowWithBG>
-      <HeadingCenteredCol className={'project-heading project-heading-animate'} span={24}>
+      <HeadingCenteredCol className={'project-heading project-heading-animate'} span={20}>
         <StyledDivider>B &nbsp;&nbsp;R&nbsp;&nbsp; A&nbsp;&nbsp; N&nbsp;&nbsp; D&nbsp;&nbsp; S</StyledDivider>
       </HeadingCenteredCol>
       <ProjectItemCol className={'projects projects-animate'} span={20}>

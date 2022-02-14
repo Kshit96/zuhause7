@@ -4,14 +4,24 @@ import BG from '../images/ProjectsBG.png';
 import styled from 'styled-components';
 import { CenteredCol } from './LandingPage'
 import { StyledDivider } from './About';
-import Img1 from '../images/categories/Projects/11.png';
-import Img2 from '../images/categories/Projects/12.png';
-import Img3 from '../images/categories/Projects/13.png';
-import Img4 from '../images/categories/Projects/Furniture.jpeg';
-import Img5 from '../images/categories/Projects/Lighting.jpeg';
-import Img6 from '../images/categories/Projects/Mandatory.jpeg';
-import Img7 from '../images/categories/Projects/Newsletter3.jpeg';
-import Img8 from '../images/categories/Projects/Optional.jpeg';
+import Img1 from '../images/categories/Projects/a.png';
+import Img2 from '../images/categories/Projects/b.jpeg';
+import Img3 from '../images/categories/Projects/c.jpeg';
+import Img4 from '../images/categories/Projects/d.jpeg';
+import Img5 from '../images/categories/Projects/e.png';
+import Img6 from '../images/categories/Projects/f.jpeg';
+import Img7 from '../images/categories/Projects/g.jpeg';
+import Img8 from '../images/categories/Projects/h.jpeg';
+import Img9 from '../images/categories/Projects/i.jpeg';
+import Img10 from '../images/categories/Projects/j.jpeg';
+import Img11 from '../images/categories/Projects/k.jpeg';
+import Img12 from '../images/categories/Projects/l.jpeg';
+import Img13 from '../images/categories/Projects/m.jpeg';
+import Img14 from '../images/categories/Projects/n.png';
+import Img15 from '../images/categories/Projects/o.jpeg';
+import Img16 from '../images/categories/Projects/p.jpeg';
+import Img17 from '../images/categories/Projects/q.jpeg';
+import Img18 from '../images/categories/Projects/r.jpeg';
 import Gallery from "react-photo-gallery";
 
 
@@ -191,29 +201,24 @@ export const photos = [
     height: 9
   },
   {
-    src: Img5,
-    width: 12,
-    height: 16
-  },
-  {
     src: Img2,
     width: 16,
-    height: 9
-  },
-  {
-    src: Img4,
-    width: 12,
-    height: 16
+    height: 11
   },
   {
     src: Img3,
+    width: 12,
+    height: 16
+  },
+  {
+    src: Img4,
     width: 16,
     height: 9
   },
   {
-    src: Img7,
-    width: 3,
-    height: 2
+    src: Img5,
+    width: 16,
+    height: 9
   },
   {
     src: Img6,
@@ -221,9 +226,64 @@ export const photos = [
     height: 16
   },
   {
+    src: Img7,
+    width: 16,
+    height: 10
+  },
+  {
     src: Img8,
+    width: 12,
+    height: 16
+  },
+  {
+    src: Img9,
+    width: 12,
+    height: 16
+  },
+  {
+    src: Img10,
     width: 16,
     height: 9
+  },
+  {
+    src: Img11,
+    width: 12,
+    height: 16
+  },
+  {
+    src: Img12,
+    width: 16,
+    height: 9
+  },
+  {
+    src: Img13,
+    width: 11,
+    height: 16
+  },
+  {
+    src: Img14,
+    width: 15,
+    height: 9
+  },
+  {
+    src: Img15,
+    width: 12,
+    height: 16
+  },
+  {
+    src: Img16,
+    width: 16,
+    height: 9
+  },
+  {
+    src: Img17,
+    width: 12,
+    height: 16
+  },
+  {
+    src: Img18,
+    width: 12,
+    height: 16
   }
 ];
 
@@ -253,7 +313,7 @@ const Projects = () => {
 
   return (
     <StyledRowWithBG>
-      <HeadingCenteredCol className={'project-heading project-heading-animate'} span={24}>
+      <HeadingCenteredCol className={'project-heading project-heading-animate'} xs={{span: 24}} sm={{span: 24}} md={{span: 20}} >
         <StyledDivider>P &nbsp;&nbsp;R&nbsp;&nbsp; O&nbsp;&nbsp; J&nbsp;&nbsp; E&nbsp;&nbsp; C&nbsp;&nbsp; T&nbsp;&nbsp; S</StyledDivider>
       </HeadingCenteredCol>
       <ProjectItemCol className={'projects projects-animate'} span={20}>

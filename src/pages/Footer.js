@@ -78,21 +78,20 @@ const Footer = () => {
     return (
         <StyledRowWithBG>
             <CenteredCol style={{ flexDirection: 'column', color: 'white', fontFamily: 'AvenirNextRegular', fontSize: '1rem' }} span={24}>
-                <Col style={{display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center'}}
+                <Col style={{display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', flexDirection:'column'}}
                     xs={{ span: 18 }}
                     sm={{ span: 18 }}
                     md={{ span: 22 }}
                     lg={{ span: 18 }}
                     xl={{ span: 18 }}
                     xxl={{ span: 18 }}
-                >
+                ><b>6th floor, 4A/14, Golden Valley Chs Ltd, Kalina, Opp Canar Bank, Santacruz (East), Mumbai: 400098</b><br/>
                     info@zuhause7@gmail.com<br />
                     +91 9820512331<br />
                     GST No.: AAFPL808G<br />
                 </Col>
                 <Col style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', marginTop: '1rem'}}>
                     <InstagramOutlined style={{fontSize: '2rem'}}/>
-                    <FacebookOutlined style={{marginLeft: '1rem', fontSize: '2rem'}}/>
                 </Col>
             </CenteredCol>
         </StyledRowWithBG>

@@ -47,6 +47,5 @@ export const ARTEFACTS = scale => {
       }
     )
   })
-  
   return artefactsObject;
 };

@@ -707,7 +707,7 @@ const Categories = () => {
     }
     setIsModalVisible(true);
   }
-
+  console.log('Furniture', FURNITURE);
   return (
     <StyledRowWithBG>
       <StyledModalWithBG visible={isModalVisible} footer={null} onCancel={handleCancel}>

@@ -12,6 +12,9 @@ background-size: cover;
 width: 100%;
 overflow: hidden;
 background-position: center;
+display: flex;
+justify-content: center;
+align-items: center;
 
 @media only screen and (max-width: 600px) {
     height: 768px;
@@ -182,8 +185,8 @@ export const StyledDivider = styled(Divider)`
 color: #0f121a!Important;
 font-family: AvenirNextBold;
 
-max-width: 60%!Important;
-min-width: 60%!Important;
+max-width: 100%!Important;
+min-width: 100%!Important;
 &::before{
     border-top-color: #0f121a!Important;
     top: 0!important;
@@ -207,8 +210,8 @@ min-width: 60%!Important;
 
 @media only screen and (min-width: 768px) {
     font-size: 1.5rem!important;
-    max-width: 80%!Important;
-    min-width: 80%!Important;
+    max-width: 100%!Important;
+    min-width: 100%!Important;
   }
 
 @media only screen and (min-width: 992px) {
@@ -285,7 +288,7 @@ const About = () => {
 
   return (
     <StyledRowWithBG>
-      <HeadingCenteredCol span={24}>
+      <HeadingCenteredCol xs={{span: 24}} sm={{span: 24}} md={{span: 20}} >
         <StyledImage className={'image image-animate'} preview={false} src={Profile} />
         <StyledDivider className={'title title-animate'}>About Zahra Chadha</StyledDivider>
       </HeadingCenteredCol>
