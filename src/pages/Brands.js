@@ -66,7 +66,7 @@ export const settings = {
 };
 
 export const StyledSlider = styled(Slider)`
-width: 80%;
+width: 100%;
 height: 80%;
 // display: flex;
 // align-items: flex-end;
@@ -162,7 +162,7 @@ height: 80%;
 
 .slick-list{
 
-    overflow-x: clip;
+    // overflow-x: clip;
     overflow-y: visible;
 
     @media only screen and (max-width: 600px) {
@@ -266,7 +266,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 align-content: center;
-overflow-x: clip;
+// overflow-x: clip;
 overflow-y: visible;
 white-space: no-wrap;
 
@@ -428,7 +428,8 @@ const BrandData = [
 "COVET HOUSE",  
 "THE RUG COMPANY", 
 "CRATE & BARREL",
-"HOLLYHUNT", 
+"HOLLYHUNT",
+"RESTORATION HARDWARE" 
 ]
 
 const StyledP = styled.p`
@@ -451,15 +452,15 @@ text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 @media only screen and (min-width: 992px) {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 @media only screen and (min-width: 1200px) {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 @media only screen and (min-width: 1600px) {
