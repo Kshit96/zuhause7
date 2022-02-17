@@ -163,7 +163,7 @@ height: 80%;
 .slick-list{
 
     // overflow-x: clip;
-    overflow-y: visible;
+    // overflow-y: visible;
 
     @media only screen and (max-width: 600px) {
         height: 90%!important;
