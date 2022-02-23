@@ -168,34 +168,36 @@ background-image: url(${BG});
 background-size: cover;
 align-content: center;
 background-position: center;
+padding-top: 2rem;
+padding-bottom: 2rem;
 
 @media only screen and (max-width: 600px) {
-    height: 768px;
+    height: fit-content;
     width: 100%;
   }
   
   @media only screen and (min-width: 600px) {
-    height: 768px;
+    height: fit-content;
     width: 100%;
   }
 
 @media only screen and (min-width: 768px) {
-    height: 768px;
+    height: fit-content;
     width: 100%;
   }
 
 @media only screen and (min-width: 992px) {
-    height: 768px;
+    height: fit-content;
     width: 100%;
   }
 
 @media only screen and (min-width: 1200px) {
-  height: 768px;
+  height: fit-content;
   width: 100%;
 }
 
 @media only screen and (min-width: 1600px) {
-  height: 1080px;
+  height: fit-content;
   width: 100%;
 }
 
@@ -229,6 +231,8 @@ export const FullWidthRowIntro = styled(FullWidthRow)`
 
 export const FullWidthRowSpaceAround = styled(FullWidthRow)`
 display: flex;
+margin-top: 2rem;
+margin-bottom: 2rem;
 @media only screen and (max-width: 600px) {
     height: 60%;
   }
@@ -315,32 +319,37 @@ transition: height 0.5s, width 0.5s, transform 0.5s;
 
 
 @media only screen and (max-width: 600px) {
+    margin:1rem;
     width: 18rem!important;
     height: 15rem;
   }
   
   @media only screen and (min-width: 600px) {
+    margin: 2rem;
     width: 18rem!important;
     height: 15rem;
   }
 
 @media only screen and (min-width: 768px) {
-    margin: 0 4rem;
+    margin: 2rem;
     width: 24rem!important;
     height: 20rem;
   }
 
 @media only screen and (min-width: 992px) {
+    margin: 2rem;
     width: 24rem!important;
     height: 20rem;
   }
 
 @media only screen and (min-width: 1200px) {
+    margin: 2rem;
     width: 24rem!important;
     height: 20rem;
   }
   
   @media only screen and (min-width: 1600px) {
+    margin: 2rem;
     width: 30rem!important;
     height: 25rem;
   }
@@ -379,21 +388,21 @@ transition: height 0.5s, width 0.5s, transform 0.5s;
 
 img{
     transform-origin: center center;
-    margin-top: -8rem;
+    margin-top: 0rem;
     width: 32rem;
     align-self: center;
     transition: transform 0.5s, width 0.5s;
 
     @media only screen and (max-width: 600px) {
-        width: 24rem;
+        width: 18rem;
       }
       
       @media only screen and (min-width: 600px) {
-        width: 24rem;
+        width: 18rem;
       }
     
     @media only screen and (min-width: 768px) {
-        width: 24rem;
+        width: 18rem;
       }
 
     @media only screen and (min-width: 992px) {
@@ -446,11 +455,11 @@ span{
     width: auto;
     text-align: center;
     @media only screen and (max-width: 600px) {
-        top: -200px;
+        top: -100px;
       }
       
       @media only screen and (min-width: 600px) {
-        top: -200px;
+        top: -100px;
       }
     
     @media only screen and (min-width: 768px) {
@@ -734,7 +743,6 @@ const Categories = () => {
         </CenteredCol>
       </FullWidthRowIntro>
       <FullWidthRowSpaceAround>
-        <StyledSlider {...settings} >
           <ImageCol
             onClick={() => showModal('FURNITURE')}
           ><div className={'furniture furniture-animate'}>
@@ -755,7 +763,6 @@ const Categories = () => {
             <Image preview={false} src={Artefacts} />
             <StyledSpan><HeadingP>ARTEFACTS</HeadingP></StyledSpan></div>
           </ImageCol>
-        </StyledSlider>
       </FullWidthRowSpaceAround>
     </StyledRowWithBG>
   );

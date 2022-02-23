@@ -13,7 +13,6 @@ import Img6 from '../images/categories/Projects/f.jpeg';
 import Img7 from '../images/categories/Projects/g.jpeg';
 import Img8 from '../images/categories/Projects/h.jpeg';
 import Img9 from '../images/categories/Projects/i.jpeg';
-import Img10 from '../images/categories/Projects/j.jpeg';
 import Img11 from '../images/categories/Projects/k.jpeg';
 import Img12 from '../images/categories/Projects/l.jpeg';
 import Img13 from '../images/categories/Projects/m.jpeg';
@@ -21,7 +20,6 @@ import Img14 from '../images/categories/Projects/n.png';
 import Img15 from '../images/categories/Projects/o.jpeg';
 import Img16 from '../images/categories/Projects/p.jpeg';
 import Img17 from '../images/categories/Projects/q.jpeg';
-import Img18 from '../images/categories/Projects/r.jpeg';
 import Gallery from "react-photo-gallery";
 
 
@@ -241,11 +239,6 @@ export const photos = [
     height: 16
   },
   {
-    src: Img10,
-    width: 16,
-    height: 9
-  },
-  {
     src: Img11,
     width: 12,
     height: 16
@@ -277,11 +270,6 @@ export const photos = [
   },
   {
     src: Img17,
-    width: 12,
-    height: 16
-  },
-  {
-    src: Img18,
     width: 12,
     height: 16
   }

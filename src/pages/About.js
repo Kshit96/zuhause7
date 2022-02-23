@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Row, Image, Divider } from 'antd';
-import BG from '../images/AboutBG.png';
+import BG from '../images/ProjectsBG.png';
 import styled from 'styled-components';
 import Profile from '../images/ZCImage.jpeg';
 import { CenteredCol } from './LandingPage'
@@ -15,34 +15,36 @@ background-position: center;
 display: flex;
 justify-content: center;
 align-items: center;
+padding-top: 2rem;
+padding-bottom: 2rem;
 
 @media only screen and (max-width: 600px) {
-    height: 768px;
+    height: fit-content;
     width: 100%;
   }
   
   @media only screen and (min-width: 600px) {
-    height: 768px;
+    height: fit-content;
     width: 100%;
   }
 
 @media only screen and (min-width: 768px) {
-    height: 768px;
+    height: fit-content;
     width: 100%;
   }
 
 @media only screen and (min-width: 992px) {
-    height: 768px;
+    height: fit-content;
     width: 100%;
   }
 
 @media only screen and (min-width: 1200px) {
-  height: 768px;
+  height: fit-content;
   width: 100%;
 }
 
 @media only screen and (min-width: 1600px) {
-  height: 1080px;
+  height: fit-content;
   width: 100%;
 }
 

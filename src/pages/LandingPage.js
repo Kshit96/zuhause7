@@ -147,12 +147,12 @@ const LandingPage = () => {
         xl={{ span: 18 }}
         xxl={{ span: 18 }}>
           <br />
-          <p className={'fade-in-para1 fade-in-para1-animate'}>Zu•hau•se  / [tsuˈhauzə] /, meaning <BoldP>at home</BoldP>, is a dream put to implementation by <BoldP>Zahra Chadha.</BoldP>
+          <p className={'fade-in-para1 fade-in-para1-animate'}>Zu•hau•se  / [tsuˈhauzə] /, meaning <BoldP>at home</BoldP>, is a dream put to reality by <BoldP>Zahra Chadha.</BoldP>
             <br /><br />
             Our aim is to ensure you get what you want to make your spaces as <BoldP>functional, comfortable and warm</BoldP> as possible.<br />
-            Let your dreams of getting that specific lighting, furniture, signature art piece, flooring or rugs be converted into reality by Zuhause7.<br />
-            We get the best, and more importantly what you need, from the Europe and the USA. And if that does not satiate your desire for your dream space,
-            we can help you source it locally to your bespoke requirements as well.</p>
+            Let your dreams of shaping up your place of inhabitancy with bespoke Lighting, Furniture, Art Installations, and Artefacts, be converted into reality by Zuhause7.<br /><br/>
+            Having a vast collaborative network with international brands from North America and Europe, enables us to provide our customers with products that are the best in its class, but most importantly each of them in design highlights each distinct regional culture with elegance and diversity.
+However, if the plethora of options prove to be too overwhelming, we offer our clients the chance to be a part of the design making process, by partnering up with local manufacturers in order to build tailor-made fixtures with high-end  materials of individual selection.</p>
           <br /><br /><br /><br /><br />
         </IntroductionCol>
         </FullWidthRow>

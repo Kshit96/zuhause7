@@ -85,7 +85,7 @@ const Footer = () => {
                     lg={{ span: 18 }}
                     xl={{ span: 18 }}
                     xxl={{ span: 18 }}
-                ><b>6th floor, 4A/14, Golden Valley Chs Ltd, Kalina, Opp Canar Bank, Santacruz (East), Mumbai: 400098</b><br/>
+                ><b>6th floor, 4A/14, Golden Valley Chs Ltd, Kalina, Opp Canara Bank, Santacruz (East), Mumbai: 400098</b><br/>
                     info@zuhause7@gmail.com<br />
                     +91 9820512331<br />
                     GST No.: AAFPL808G<br />
