@@ -309,7 +309,7 @@ const About = () => {
             <br /><br />
             In 2011, the field of lighting design, supply and installation became part of her portfolio. Corporate houses in Mumbai, Pune, Hyderabad, Bangalore along-with high end residential projects were a challenge to take on for designing and execution in lighting. This afforded her the privilege of being part of named architectural firms in Mumbai that added to her knowledge and expertise of spaces and client requirements.
             <br /><br />
-            The curiosity for learning took has taken her to many exhibitions making furniture and artefacts another area of interest.
+            The curiosity for learning took her to many exhibitions making furniture and artefacts another area of interest.
             <br /><br />
             <StyledI >“The culmination of any project is when the clients finally see the end result of the journey where you handhold them, help select a good product, procure it, and handle the logistics. It is a very emotional experience, and it is all handled by Zuhause7.”</StyledI>
             <br/><BoldP><i style={{color: 'black'}}>&nbsp;&nbsp;-Zahra Chadha</i></BoldP>

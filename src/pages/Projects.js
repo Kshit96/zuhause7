@@ -302,7 +302,7 @@ const Projects = () => {
   return (
     <StyledRowWithBG>
       <HeadingCenteredCol className={'project-heading project-heading-animate'} xs={{span: 24}} sm={{span: 24}} md={{span: 20}} >
-        <StyledDivider>P &nbsp;&nbsp;R&nbsp;&nbsp; O&nbsp;&nbsp; J&nbsp;&nbsp; E&nbsp;&nbsp; C&nbsp;&nbsp; T&nbsp;&nbsp; S</StyledDivider>
+        <StyledDivider style={{letterSpacing: "1rem"}}>PROJECTS</StyledDivider>
       </HeadingCenteredCol>
       <ProjectItemCol className={'projects projects-animate'} span={20}>
       <Gallery photos={photos} />
